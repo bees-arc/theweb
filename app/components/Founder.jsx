@@ -225,16 +225,6 @@ export default function Founder({ onOpenFounderModal }) {
         </div>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 860px) {
-          .founder-avatar-col {
-            grid-column: span 12 !important;
-          }
-          .founder-content-col {
-            grid-column: span 12 !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

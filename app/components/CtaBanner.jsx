@@ -330,16 +330,6 @@ export default function CtaBanner() {
         </div>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 900px) {
-          .cta-left-col {
-            grid-column: span 12 !important;
-          }
-          .cta-right-col {
-            grid-column: span 12 !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }
