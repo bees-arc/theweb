@@ -83,14 +83,7 @@ export default function WhatWeDo() {
         </div>
 
         {/* 3 Bento Cards with n8n base card styling */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '24px',
-            marginBottom: '40px',
-          }}
-        >
+        <div className="what-we-do-grid">
           {services.map((service, idx) => {
             const IconComponent = service.icon;
             const isHovered = activeService === idx;

@@ -92,16 +92,7 @@ export default function Hero() {
         {/* ========================================================
             PART 1: TWO-COLUMN HERO MATCHING N8N.IO EXACTLY
            ======================================================== */}
-        <div
-          className="hero-main-grid"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(12, 1fr)',
-            gap: '40px',
-            alignItems: 'center',
-            marginBottom: '80px',
-          }}
-        >
+        <div className="hero-main-grid">
           {/* Left Column: Headlines, Buttons, then Subtext */}
           <div style={{ gridColumn: 'span 7' }} className="hero-left-col">
             <h1
@@ -121,50 +112,19 @@ export default function Hero() {
             </h1>
 
             {/* Dual CTA Buttons placed DIRECTLY below headline like n8n.io */}
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '14px',
-                flexWrap: 'wrap',
-                marginBottom: '36px',
-              }}
-            >
+            <div className="hero-cta-group">
               <Link
                 href="/contact"
-                style={{
-                  background: 'var(--n8n-btn-primary)',
-                  color: '#06090F',
-                  fontWeight: 700,
-                  fontSize: '0.96rem',
-                  padding: '13px 26px',
-                  borderRadius: '8px',
-                  textDecoration: 'none',
-                  boxShadow: 'inset 0 1px 1px rgba(255, 255, 255, 0.5), 0 4px 18px rgba(0, 210, 255, 0.45)',
-                  transition: 'all 0.2s ease',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                }}
+                className="hero-btn-main"
               >
-                <span>Have something in mind? Let's build it</span>
+                <span className="hero-btn-text-desktop">Have something in mind? Let's build it</span>
+                <span className="hero-btn-text-mobile">Start your project</span>
                 <ArrowRight size={16} />
               </Link>
 
               <Link
                 href="/how-we-work#approach"
-                style={{
-                  background: 'rgba(255, 255, 255, 0.08)',
-                  color: '#FFFFFF',
-                  border: '1px solid rgba(255, 255, 255, 0.15)',
-                  fontWeight: 600,
-                  fontSize: '0.96rem',
-                  padding: '13px 24px',
-                  borderRadius: '8px',
-                  textDecoration: 'none',
-                  backdropFilter: 'blur(16px)',
-                  transition: 'all 0.2s ease',
-                }}
+                className="hero-btn-sub"
               >
                 Theweb Approach
               </Link>
@@ -283,49 +243,17 @@ export default function Hero() {
         {/* ========================================================
             PART 3: N8N.IO WORKFLOW VIEWER WITH VERTICAL TABS
            ======================================================== */}
-        <div
-          className="card-n8n-spark"
-          style={{
-            padding: '36px 32px',
-            borderRadius: 'var(--radius-2xl)',
-            overflow: 'hidden',
-          }}
-        >
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(12, 1fr)',
-              gap: '32px',
-              alignItems: 'stretch',
-            }}
-          >
+        <div className="card-n8n-spark hero-viewer-card">
+          <div className="hero-viewer-grid">
             {/* Left Column: Vertical Tabs with Red/Cyan Accent Indicator */}
-            <div
-              style={{
-                gridColumn: 'span 4',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '8px',
-              }}
-              className="viewer-tabs-col"
-            >
+            <div className="viewer-tabs-col">
               {workflowTabs.map((tab, idx) => {
                 const isActive = activeTab === idx;
                 return (
                   <div
                     key={tab.id}
                     onClick={() => setActiveTab(idx)}
-                    style={{
-                      padding: '18px 20px',
-                      borderRadius: '12px',
-                      cursor: 'pointer',
-                      background: isActive ? 'rgba(255, 255, 255, 0.06)' : 'transparent',
-                      borderLeft: isActive
-                        ? '4px solid var(--brand-cyan-neon)'
-                        : '4px solid transparent',
-                      transition: 'all 0.2s ease',
-                      position: 'relative',
-                    }}
+                    className={`viewer-tab-item ${isActive ? 'active' : ''}`}
                   >
                     <div style={{ fontSize: '1.1rem', fontWeight: 800, color: isActive ? '#FFFFFF' : 'var(--color-heading-secondary)', marginBottom: '4px' }}>
                       <strong>{tab.title}</strong> can
@@ -339,19 +267,7 @@ export default function Hero() {
             </div>
 
             {/* Right Column: Node Canvas Simulator */}
-            <div
-              style={{
-                gridColumn: 'span 8',
-                background: 'rgba(7, 12, 22, 0.85)',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
-                borderRadius: '16px',
-                padding: '24px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-              }}
-              className="viewer-canvas-col"
-            >
+            <div className="viewer-canvas-col">
               {/* Canvas Action Bar */}
               <div
                 style={{
@@ -381,15 +297,7 @@ export default function Hero() {
               </div>
 
               {/* Node Sequence */}
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
-                  gap: '12px',
-                  position: 'relative',
-                  marginBottom: '20px',
-                }}
-              >
+              <div className="workflow-nodes-grid">
                 {currentWorkflow.nodes.map((node) => (
                   <div
                     key={node.id}
