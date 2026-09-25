@@ -198,11 +198,11 @@ export default function Hero() {
             <div
               style={{
                 position: 'absolute',
-                width: '380px',
-                height: '380px',
+                width: '420px',
+                height: '420px',
                 borderRadius: '50%',
-                background: 'radial-gradient(circle, rgba(0, 245, 212, 0.22) 0%, rgba(0, 132, 255, 0.12) 50%, transparent 70%)',
-                filter: 'blur(55px)',
+                background: 'radial-gradient(circle, rgba(0, 245, 212, 0.18) 0%, rgba(0, 132, 255, 0.09) 45%, transparent 70%)',
+                filter: 'blur(60px)',
                 pointerEvents: 'none',
                 zIndex: 0,
               }}
@@ -222,14 +222,13 @@ export default function Hero() {
               }}
             >
               <Image
-                src="/hero-logo-blended.jpg"
+                src="/hero-logo-transparent.webp"
                 alt="Theweb 3D Monogram Motif"
                 fill
                 sizes="(max-width: 768px) 100vw, 460px"
                 style={{
                   objectFit: 'contain',
-                  mixBlendMode: 'screen',
-                  filter: 'drop-shadow(0 0 40px rgba(0, 210, 255, 0.35))',
+                  filter: 'drop-shadow(0 0 35px rgba(0, 245, 212, 0.35)) drop-shadow(0 20px 45px rgba(0, 0, 0, 0.7))',
                 }}
                 priority
               />
