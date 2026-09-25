@@ -1,6 +1,6 @@
 'use client';
 
-import { Sparkles, Globe, Heart, Shield, Award, Users } from 'lucide-react';
+import { Sparkles, Globe } from 'lucide-react';
 
 export default function Partners() {
   const partners = [
@@ -43,8 +43,8 @@ export default function Partners() {
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <div className="section-tag">
-            <Sparkles size={14} />
+          <div className="n8n-badge">
+            <Sparkles size={13} />
             <span>Collaboration & Global Trust</span>
           </div>
           <h2 className="section-title">
@@ -56,7 +56,7 @@ export default function Partners() {
           </p>
         </div>
 
-        {/* Partners Grid */}
+        {/* Partners Grid in n8n Base Card Style */}
         <div
           style={{
             display: 'grid',
@@ -67,7 +67,7 @@ export default function Partners() {
           {partners.map((partner, idx) => (
             <div
               key={idx}
-              className="glass-card"
+              className="card-n8n-base"
               style={{
                 padding: '32px 28px',
                 display: 'flex',
@@ -88,23 +88,23 @@ export default function Partners() {
                     style={{
                       fontSize: '0.74rem',
                       fontWeight: 700,
-                      color: 'var(--cyan-bright)',
+                      color: 'var(--brand-cyan-neon)',
                       background: 'rgba(0, 245, 212, 0.1)',
                       border: '1px solid rgba(0, 245, 212, 0.25)',
-                      padding: '4px 10px',
+                      padding: '4px 12px',
                       borderRadius: 'var(--radius-full)',
                     }}
                   >
                     {partner.badge}
                   </span>
-                  <Globe size={18} color="var(--text-muted)" />
+                  <Globe size={18} color="var(--color-text-muted)" />
                 </div>
 
                 <h3
                   style={{
                     fontSize: '1.35rem',
                     fontWeight: 800,
-                    color: 'var(--text-white)',
+                    color: '#FFFFFF',
                     marginBottom: '6px',
                   }}
                 >
@@ -115,7 +115,7 @@ export default function Partners() {
                   style={{
                     fontSize: '0.86rem',
                     fontWeight: 600,
-                    color: 'var(--cyan-electric)',
+                    color: 'var(--brand-cyan-electric)',
                     marginBottom: '14px',
                   }}
                 >
@@ -125,7 +125,7 @@ export default function Partners() {
                 <p
                   style={{
                     fontSize: '0.9rem',
-                    color: 'var(--text-secondary)',
+                    color: 'var(--color-heading-secondary)',
                     lineHeight: 1.6,
                   }}
                 >
@@ -139,7 +139,7 @@ export default function Partners() {
                   paddingTop: '16px',
                   borderTop: '1px solid rgba(255, 255, 255, 0.06)',
                   fontSize: '0.8rem',
-                  color: 'var(--text-muted)',
+                  color: 'var(--color-text-muted)',
                 }}
               >
                 {partner.role}

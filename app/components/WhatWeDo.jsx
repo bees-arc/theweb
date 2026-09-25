@@ -1,9 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { ArrowRight, Laptop, Globe, Palette, CheckCircle2, Code2, Sparkles, Layers } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowRight, Laptop, Globe, Palette, CheckCircle2, Sparkles } from 'lucide-react';
 
-export default function WhatWeDo({ onOpenContact }) {
+export default function WhatWeDo() {
   const [activeService, setActiveService] = useState(0);
 
   const services = [
@@ -68,9 +69,9 @@ export default function WhatWeDo({ onOpenContact }) {
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <div className="section-tag">
-            <Sparkles size={14} />
-            <span>Core Capabilities</span>
+          <div className="n8n-badge">
+            <Sparkles size={13} />
+            <span>Capabilities & Services</span>
           </div>
           <h2 className="section-title">
             WHAT WE DO
@@ -81,7 +82,7 @@ export default function WhatWeDo({ onOpenContact }) {
           </p>
         </div>
 
-        {/* 3 Bento Cards */}
+        {/* 3 Bento Cards with n8n base card styling */}
         <div
           style={{
             display: 'grid',
@@ -98,20 +99,15 @@ export default function WhatWeDo({ onOpenContact }) {
               <div
                 key={service.id}
                 onMouseEnter={() => setActiveService(idx)}
-                className="glass-card"
+                className="card-n8n-base"
                 style={{
                   padding: '36px 30px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
                   border: isHovered
-                    ? '1px solid rgba(0, 210, 255, 0.45)'
-                    : '1px solid var(--border-subtle)',
-                  background: isHovered
-                    ? 'linear-gradient(180deg, rgba(16, 27, 50, 0.85) 0%, rgba(9, 14, 27, 0.95) 100%)'
-                    : 'var(--bg-card)',
-                  boxShadow: isHovered ? 'var(--card-shadow-active)' : 'var(--card-shadow)',
-                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+                    ? '1px solid rgba(0, 245, 212, 0.45)'
+                    : '1px solid rgba(255, 255, 255, 0.1)',
                 }}
               >
                 <div>
@@ -130,24 +126,25 @@ export default function WhatWeDo({ onOpenContact }) {
                         height: '52px',
                         borderRadius: 'var(--radius-md)',
                         background: 'linear-gradient(135deg, rgba(0, 245, 212, 0.15) 0%, rgba(0, 132, 255, 0.15) 100%)',
-                        border: '1px solid rgba(0, 210, 255, 0.3)',
+                        border: '1px solid rgba(0, 210, 255, 0.35)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        color: 'var(--cyan-bright)',
+                        color: 'var(--brand-cyan-neon)',
+                        boxShadow: '0 0 20px rgba(0, 210, 255, 0.2)',
                       }}
                     >
                       <IconComponent size={26} />
                     </div>
                     <span
                       style={{
-                        fontSize: '0.75rem',
-                        fontWeight: 600,
+                        fontSize: '0.74rem',
+                        fontWeight: 700,
                         padding: '4px 10px',
                         borderRadius: 'var(--radius-full)',
                         background: 'rgba(255, 255, 255, 0.05)',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
-                        color: 'var(--cyan-electric)',
+                        border: '1px solid rgba(255, 255, 255, 0.12)',
+                        color: 'var(--brand-cyan-electric)',
                       }}
                     >
                       {service.highlight}
@@ -157,9 +154,9 @@ export default function WhatWeDo({ onOpenContact }) {
                   {/* Title & Tagline */}
                   <h3
                     style={{
-                      fontSize: '1.65rem',
+                      fontSize: '1.75rem',
                       fontWeight: 800,
-                      color: 'var(--text-white)',
+                      color: '#FFFFFF',
                       marginBottom: '6px',
                       letterSpacing: '-0.02em',
                     }}
@@ -170,7 +167,7 @@ export default function WhatWeDo({ onOpenContact }) {
                     style={{
                       fontSize: '0.9rem',
                       fontWeight: 600,
-                      color: 'var(--cyan-electric)',
+                      color: 'var(--brand-cyan-electric)',
                       marginBottom: '16px',
                     }}
                   >
@@ -180,8 +177,8 @@ export default function WhatWeDo({ onOpenContact }) {
                   {/* Description */}
                   <p
                     style={{
-                      fontSize: '0.95rem',
-                      color: 'var(--text-secondary)',
+                      fontSize: '0.94rem',
+                      color: 'var(--color-heading-secondary)',
                       lineHeight: 1.6,
                       marginBottom: '24px',
                     }}
@@ -193,12 +190,12 @@ export default function WhatWeDo({ onOpenContact }) {
                   <div style={{ marginBottom: '28px' }}>
                     <div
                       style={{
-                        fontSize: '0.78rem',
+                        fontSize: '0.76rem',
                         fontWeight: 700,
                         textTransform: 'uppercase',
-                        letterSpacing: '0.06em',
-                        color: 'var(--text-muted)',
-                        marginBottom: '12px',
+                        letterSpacing: '0.08em',
+                        color: 'var(--color-text-muted)',
+                        marginBottom: '14px',
                       }}
                     >
                       What We Deliver
@@ -212,10 +209,10 @@ export default function WhatWeDo({ onOpenContact }) {
                             alignItems: 'center',
                             gap: '10px',
                             fontSize: '0.88rem',
-                            color: 'var(--text-primary)',
+                            color: '#FFFFFF',
                           }}
                         >
-                          <CheckCircle2 size={15} color="var(--cyan-bright)" style={{ flexShrink: 0 }} />
+                          <CheckCircle2 size={15} color="var(--brand-cyan-neon)" style={{ flexShrink: 0 }} />
                           <span>{cap}</span>
                         </li>
                       ))}
@@ -233,21 +230,23 @@ export default function WhatWeDo({ onOpenContact }) {
                     justifyContent: 'space-between',
                   }}
                 >
-                  <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
+                  <span style={{ fontSize: '0.82rem', color: 'var(--color-text-muted)' }}>
                     Ready to build?
                   </span>
-                  <button
-                    onClick={onOpenContact}
+                  <Link
+                    href="/contact"
                     className="btn btn-secondary btn-anim-arrow"
                     style={{
                       padding: '8px 16px',
-                      fontSize: '0.85rem',
-                      borderRadius: 'var(--radius-sm)',
+                      fontSize: '0.84rem',
+                      borderRadius: 'var(--radius-full)',
                     }}
                   >
-                    <span>Discuss Scope</span>
-                    <ArrowRight size={14} />
-                  </button>
+                    <span className="btn-label">Discuss Scope</span>
+                    <span className="btn-icon">
+                      <ArrowRight size={13} />
+                    </span>
+                  </Link>
                 </div>
               </div>
             );

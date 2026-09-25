@@ -1,32 +1,35 @@
 'use client';
 
-import { Sparkles, Quote, Star } from 'lucide-react';
+import { Sparkles, Star } from 'lucide-react';
 
 export default function Testimonials() {
   const testimonials = [
     {
       name: 'Babette',
       title: 'International Mentor & Long-term Partner',
+      handle: '@babette_intl',
       location: 'International Client Network',
+      headline: 'The name “Theweb” came from Babette.',
       quote:
         'What started as an internship grew into a long-term professional relationship. The curiosity, discipline, and commitment to turning raw ideas into tangible products was clear from the start. That is why I suggested the name “Theweb”—an idea that has now grown into a remarkable international agency.',
-      highlight: '“The name ‘Theweb’ came from Babette.”',
     },
     {
       name: 'Norwegian Enterprise Collaborator',
       title: 'Digital Systems Director',
+      handle: '@norway_enterprise',
       location: 'Oslo, Norway',
+      headline: 'High-level digital craft across 90+ projects.',
       quote:
         'Across more than 90 projects, Theweb has consistently demonstrated that high-level digital craft knows no borders. Whether designing intuitive UX systems or shipping fast web products, their focus is always on what is actually useful for the end user.',
-      highlight: '“High-level digital craft across 90+ projects.”',
     },
     {
       name: 'Imagine Cup SEA Panel',
       title: 'Microsoft Imagine Cup Jury & Evaluation',
+      handle: '@imaginecup_sea',
       location: 'Southeast Asia Region',
+      headline: 'Technology became less about what could be built, and more about what could be solved.',
       quote:
         'Habarala proved that technology becomes truly transformative when it moves beyond what can merely be built to what can genuinely be solved. The combination of user-centered design, IoT telemetry, and practical empathy made it a standout World Finalist.',
-      highlight: '“Technology became less about what could be built and more about what could be solved.”',
     },
   ];
 
@@ -35,8 +38,8 @@ export default function Testimonials() {
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <div className="section-tag">
-            <Sparkles size={14} />
+          <div className="n8n-badge">
+            <Sparkles size={13} />
             <span>Endorsements & Trust</span>
           </div>
           <h2 className="section-title">
@@ -47,7 +50,7 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* Testimonials 3 Columns Grid */}
+        {/* Testimonials 3 Columns Grid matching n8n feedback-slide */}
         <div
           style={{
             display: 'grid',
@@ -58,7 +61,7 @@ export default function Testimonials() {
           {testimonials.map((item, idx) => (
             <div
               key={idx}
-              className="glass-card"
+              className="card-n8n-base"
               style={{
                 padding: '36px 30px',
                 display: 'flex',
@@ -70,66 +73,67 @@ export default function Testimonials() {
                 {/* 5 Stars */}
                 <div style={{ display: 'flex', gap: '4px', marginBottom: '18px' }}>
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={15} fill="var(--cyan-bright)" color="var(--cyan-bright)" />
+                    <Star key={i} size={15} fill="var(--brand-cyan-neon)" color="var(--brand-cyan-neon)" />
                   ))}
                 </div>
 
-                <div
+                <h4
                   style={{
-                    fontSize: '0.86rem',
-                    fontWeight: 700,
-                    color: 'var(--cyan-bright)',
+                    fontSize: '1.1rem',
+                    fontWeight: 800,
+                    color: '#FFFFFF',
+                    lineHeight: 1.4,
                     marginBottom: '14px',
                   }}
                 >
-                  {item.highlight}
-                </div>
+                  "{item.headline}"
+                </h4>
 
                 <p
                   style={{
                     fontSize: '0.94rem',
-                    color: 'var(--text-secondary)',
+                    color: 'var(--color-heading-secondary)',
                     lineHeight: 1.65,
-                    fontStyle: 'italic',
-                    marginBottom: '24px',
+                    marginBottom: '28px',
                   }}
                 >
-                  "{item.quote}"
+                  {item.quote}
                 </p>
               </div>
 
-              {/* Author Info */}
+              {/* Author Info matching n8n author component */}
               <div
                 style={{
-                  paddingTop: '18px',
+                  paddingTop: '20px',
                   borderTop: '1px solid rgba(255, 255, 255, 0.08)',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '12px',
+                  gap: '14px',
                 }}
               >
                 <div
                   style={{
-                    width: '42px',
-                    height: '42px',
+                    width: '46px',
+                    height: '46px',
                     borderRadius: '50%',
-                    background: 'linear-gradient(135deg, rgba(0, 245, 212, 0.2) 0%, rgba(0, 132, 255, 0.2) 100%)',
-                    border: '1px solid var(--border-accent)',
+                    background: 'linear-gradient(135deg, rgba(0, 245, 212, 0.25) 0%, rgba(0, 132, 255, 0.25) 100%)',
+                    border: '1.5px solid var(--brand-cyan-neon)',
+                    boxShadow: '0 0 15px rgba(0, 210, 255, 0.3)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontWeight: 700,
-                    color: 'var(--text-white)',
-                    fontSize: '0.9rem',
+                    fontWeight: 800,
+                    color: '#FFFFFF',
+                    fontSize: '0.95rem',
                   }}
                 >
                   {item.name.substring(0, 2)}
                 </div>
                 <div>
-                  <h4 style={{ fontSize: '0.96rem', fontWeight: 700, color: 'var(--text-white)' }}>
+                  <h5 style={{ fontSize: '0.96rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '2px' }}>
                     {item.name}
-                  </h4>
-                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                  </h5>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)' }}>
                     {item.title} · {item.location}
                   </div>
                 </div>

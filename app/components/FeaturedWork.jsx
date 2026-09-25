@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { Sparkles, ArrowRight, ExternalLink, Award, Globe, Code, ShieldCheck } from 'lucide-react';
+import Link from 'next/link';
+import { Sparkles, ArrowRight, Award } from 'lucide-react';
 
 export default function FeaturedWork({ onSelectCaseStudy }) {
   const caseStudies = [
@@ -75,8 +75,8 @@ export default function FeaturedWork({ onSelectCaseStudy }) {
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <div className="section-tag">
-            <Sparkles size={14} />
+          <div className="n8n-badge">
+            <Sparkles size={13} />
             <span>Featured Work & Case Studies</span>
           </div>
           <h2 className="section-title">
@@ -88,7 +88,7 @@ export default function FeaturedWork({ onSelectCaseStudy }) {
           </p>
         </div>
 
-        {/* 3 Case Study Cards */}
+        {/* 3 Case Study Cards with n8n base styling */}
         <div
           style={{
             display: 'flex',
@@ -96,18 +96,16 @@ export default function FeaturedWork({ onSelectCaseStudy }) {
             gap: '32px',
           }}
         >
-          {caseStudies.map((study, idx) => (
+          {caseStudies.map((study) => (
             <div
               key={study.id}
-              className="glass-card"
+              className="card-n8n-base"
               style={{
                 padding: '40px 36px',
                 display: 'grid',
                 gridTemplateColumns: 'repeat(12, 1fr)',
                 gap: '32px',
                 alignItems: 'center',
-                border: '1px solid var(--border-subtle)',
-                background: 'linear-gradient(135deg, rgba(14, 23, 44, 0.8) 0%, rgba(8, 14, 27, 0.9) 100%)',
               }}
             >
               {/* Left Column: Case Overview */}
@@ -125,7 +123,7 @@ export default function FeaturedWork({ onSelectCaseStudy }) {
                     style={{
                       fontSize: '0.78rem',
                       fontWeight: 700,
-                      color: 'var(--cyan-bright)',
+                      color: 'var(--brand-cyan-neon)',
                       background: 'rgba(0, 245, 212, 0.1)',
                       padding: '4px 12px',
                       borderRadius: 'var(--radius-full)',
@@ -134,16 +132,16 @@ export default function FeaturedWork({ onSelectCaseStudy }) {
                   >
                     {study.tag}
                   </span>
-                  <span className="mono" style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                  <span className="mono" style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)' }}>
                     {study.period}
                   </span>
                 </div>
 
                 <h3
                   style={{
-                    fontSize: '1.75rem',
+                    fontSize: '1.85rem',
                     fontWeight: 800,
-                    color: 'var(--text-white)',
+                    color: '#FFFFFF',
                     marginBottom: '14px',
                     lineHeight: 1.25,
                     letterSpacing: '-0.02em',
@@ -155,7 +153,7 @@ export default function FeaturedWork({ onSelectCaseStudy }) {
                 <p
                   style={{
                     fontSize: '0.96rem',
-                    color: 'var(--text-secondary)',
+                    color: 'var(--color-heading-secondary)',
                     lineHeight: 1.65,
                     marginBottom: '24px',
                   }}
@@ -178,11 +176,11 @@ export default function FeaturedWork({ onSelectCaseStudy }) {
                       style={{
                         fontSize: '0.78rem',
                         fontWeight: 600,
-                        color: 'var(--text-primary)',
+                        color: '#FFFFFF',
                         background: 'rgba(255, 255, 255, 0.04)',
-                        border: '1px solid rgba(255, 255, 255, 0.08)',
-                        padding: '4px 10px',
-                        borderRadius: 'var(--radius-sm)',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        padding: '4px 12px',
+                        borderRadius: 'var(--radius-full)',
                       }}
                     >
                       {tech}
@@ -194,13 +192,15 @@ export default function FeaturedWork({ onSelectCaseStudy }) {
                   onClick={() => onSelectCaseStudy(study)}
                   className="btn btn-secondary btn-anim-arrow"
                   style={{
-                    padding: '10px 20px',
-                    fontSize: '0.9rem',
-                    borderRadius: 'var(--radius-md)',
+                    padding: '10px 22px',
+                    fontSize: '0.88rem',
+                    borderRadius: 'var(--radius-full)',
                   }}
                 >
-                  <span>Read Case Study</span>
-                  <ArrowRight size={15} />
+                  <span className="btn-label">Read Case Study</span>
+                  <span className="btn-icon">
+                    <ArrowRight size={14} />
+                  </span>
                 </button>
               </div>
 
@@ -208,10 +208,11 @@ export default function FeaturedWork({ onSelectCaseStudy }) {
               <div
                 style={{
                   gridColumn: 'span 5',
-                  background: 'rgba(17, 28, 52, 0.55)',
-                  border: '1px solid rgba(0, 210, 255, 0.2)',
+                  background: 'rgba(15, 24, 44, 0.7)',
+                  border: '1px solid rgba(0, 210, 255, 0.25)',
                   borderRadius: 'var(--radius-lg)',
                   padding: '28px 24px',
+                  boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.5)',
                 }}
                 className="case-results-col"
               >
@@ -220,17 +221,17 @@ export default function FeaturedWork({ onSelectCaseStudy }) {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '10px',
-                    marginBottom: '18px',
+                    marginBottom: '16px',
                   }}
                 >
-                  <Award size={20} color="var(--cyan-bright)" />
+                  <Award size={20} color="var(--brand-cyan-neon)" />
                   <span
                     style={{
-                      fontSize: '0.85rem',
+                      fontSize: '0.84rem',
                       fontWeight: 700,
                       textTransform: 'uppercase',
                       letterSpacing: '0.06em',
-                      color: 'var(--text-white)',
+                      color: '#FFFFFF',
                     }}
                   >
                     Key Outcomes & Impact
@@ -238,11 +239,12 @@ export default function FeaturedWork({ onSelectCaseStudy }) {
                 </div>
 
                 <div
+                  className="text-gradient"
                   style={{
-                    fontSize: '1.4rem',
+                    fontSize: '1.45rem',
                     fontWeight: 800,
-                    color: 'var(--cyan-electric)',
                     marginBottom: '16px',
+                    lineHeight: 1.2,
                   }}
                 >
                   {study.metrics}
@@ -257,11 +259,11 @@ export default function FeaturedWork({ onSelectCaseStudy }) {
                         alignItems: 'flex-start',
                         gap: '10px',
                         fontSize: '0.85rem',
-                        color: 'var(--text-secondary)',
+                        color: 'var(--color-heading-secondary)',
                         lineHeight: 1.45,
                       }}
                     >
-                      <span style={{ color: 'var(--cyan-bright)', marginTop: '2px' }}>✓</span>
+                      <span style={{ color: 'var(--brand-cyan-neon)', marginTop: '2px' }}>✓</span>
                       <span>{res}</span>
                     </li>
                   ))}

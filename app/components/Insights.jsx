@@ -1,6 +1,6 @@
 'use client';
 
-import { Sparkles, ArrowRight, BookOpen, Clock, Calendar } from 'lucide-react';
+import { Sparkles, ArrowRight, Clock } from 'lucide-react';
 
 export default function Insights({ onSelectInsight }) {
   const articles = [
@@ -60,9 +60,9 @@ The process changes with every project. The tools continue to evolve. But the fu
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <div className="section-tag">
-            <Sparkles size={14} />
-            <span>Perspectives & Thoughts</span>
+          <div className="n8n-badge">
+            <Sparkles size={13} />
+            <span>Perspectives & Insights</span>
           </div>
           <h2 className="section-title">
             INSIGHTS
@@ -72,7 +72,7 @@ The process changes with every project. The tools continue to evolve. But the fu
           </p>
         </div>
 
-        {/* 3 Articles Grid */}
+        {/* 3 Articles Grid in n8n Base Card Style */}
         <div
           style={{
             display: 'grid',
@@ -83,7 +83,7 @@ The process changes with every project. The tools continue to evolve. But the fu
           {articles.map((item) => (
             <div
               key={item.id}
-              className="glass-card"
+              className="card-n8n-base"
               style={{
                 padding: '36px 30px',
                 display: 'flex',
@@ -104,10 +104,10 @@ The process changes with every project. The tools continue to evolve. But the fu
                     style={{
                       fontSize: '0.74rem',
                       fontWeight: 700,
-                      color: 'var(--cyan-bright)',
+                      color: 'var(--brand-cyan-neon)',
                       background: 'rgba(0, 245, 212, 0.1)',
                       border: '1px solid rgba(0, 245, 212, 0.25)',
-                      padding: '3px 10px',
+                      padding: '4px 12px',
                       borderRadius: 'var(--radius-full)',
                     }}
                   >
@@ -116,7 +116,7 @@ The process changes with every project. The tools continue to evolve. But the fu
                   <div
                     style={{
                       fontSize: '0.76rem',
-                      color: 'var(--text-muted)',
+                      color: 'var(--color-text-muted)',
                       display: 'flex',
                       alignItems: 'center',
                       gap: '4px',
@@ -131,7 +131,7 @@ The process changes with every project. The tools continue to evolve. But the fu
                   style={{
                     fontSize: '1.35rem',
                     fontWeight: 800,
-                    color: 'var(--text-white)',
+                    color: '#FFFFFF',
                     marginBottom: '14px',
                     lineHeight: 1.35,
                   }}
@@ -142,7 +142,7 @@ The process changes with every project. The tools continue to evolve. But the fu
                 <p
                   style={{
                     fontSize: '0.9rem',
-                    color: 'var(--text-secondary)',
+                    color: 'var(--color-heading-secondary)',
                     lineHeight: 1.6,
                     marginBottom: '24px',
                   }}
@@ -160,7 +160,7 @@ The process changes with every project. The tools continue to evolve. But the fu
                   justifyContent: 'space-between',
                 }}
               >
-                <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                <span style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)' }}>
                   {item.date}
                 </span>
                 <button
@@ -168,9 +168,9 @@ The process changes with every project. The tools continue to evolve. But the fu
                   style={{
                     background: 'none',
                     border: 'none',
-                    color: 'var(--cyan-bright)',
+                    color: 'var(--brand-cyan-neon)',
                     fontSize: '0.86rem',
-                    fontWeight: 600,
+                    fontWeight: 700,
                     display: 'flex',
                     alignItems: 'center',
                     gap: '6px',

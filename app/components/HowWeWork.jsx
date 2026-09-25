@@ -1,9 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Sparkles, ArrowRight, CheckCircle2, ChevronRight } from 'lucide-react';
 
-export default function HowWeWork({ onOpenContact }) {
+export default function HowWeWork() {
   const [activeStep, setActiveStep] = useState(0);
 
   const steps = [
@@ -54,9 +55,9 @@ export default function HowWeWork({ onOpenContact }) {
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <div className="section-tag">
-            <Sparkles size={14} />
-            <span>Process & Delivery</span>
+          <div className="n8n-badge">
+            <Sparkles size={13} />
+            <span>5-Step Delivery Lifecycle</span>
           </div>
           <h2 className="section-title">
             HOW WE WORK
@@ -91,23 +92,21 @@ export default function HowWeWork({ onOpenContact }) {
                 <div
                   key={step.num}
                   onClick={() => setActiveStep(idx)}
-                  className="glass-card"
+                  className="card-n8n-base"
                   style={{
                     padding: '20px 22px',
                     cursor: 'pointer',
                     background: isActive
-                      ? 'linear-gradient(90deg, rgba(0, 210, 255, 0.16) 0%, rgba(14, 24, 46, 0.8) 100%)'
+                      ? 'linear-gradient(90deg, rgba(0, 210, 255, 0.18) 0%, rgba(14, 24, 46, 0.85) 100%)'
                       : 'rgba(12, 19, 35, 0.5)',
                     border: isActive
                       ? '1px solid rgba(0, 245, 212, 0.6)'
-                      : '1px solid var(--border-subtle)',
-                    borderRadius: 'var(--radius-md)',
+                      : '1px solid rgba(255, 255, 255, 0.08)',
+                    boxShadow: isActive ? '0 0 25px rgba(0, 210, 255, 0.25)' : 'none',
+                    transform: isActive ? 'translateX(6px)' : 'none',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    transition: 'all 0.25s ease',
-                    boxShadow: isActive ? '0 0 20px rgba(0, 210, 255, 0.2)' : 'none',
-                    transform: isActive ? 'translateX(6px)' : 'none',
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
@@ -116,7 +115,7 @@ export default function HowWeWork({ onOpenContact }) {
                       style={{
                         fontSize: '0.85rem',
                         fontWeight: 700,
-                        color: isActive ? 'var(--cyan-bright)' : 'var(--text-muted)',
+                        color: isActive ? 'var(--brand-cyan-neon)' : 'var(--color-text-muted)',
                       }}
                     >
                       {step.num}
@@ -126,7 +125,7 @@ export default function HowWeWork({ onOpenContact }) {
                         style={{
                           fontSize: '1.05rem',
                           fontWeight: 700,
-                          color: isActive ? '#FFFFFF' : 'var(--text-primary)',
+                          color: isActive ? '#FFFFFF' : 'var(--color-heading-primary)',
                           marginBottom: '2px',
                         }}
                       >
@@ -135,7 +134,7 @@ export default function HowWeWork({ onOpenContact }) {
                       <p
                         style={{
                           fontSize: '0.8rem',
-                          color: isActive ? 'var(--text-secondary)' : 'var(--text-muted)',
+                          color: isActive ? 'var(--color-heading-secondary)' : 'var(--color-text-muted)',
                         }}
                       >
                         {step.short}
@@ -144,7 +143,7 @@ export default function HowWeWork({ onOpenContact }) {
                   </div>
                   <ChevronRight
                     size={18}
-                    color={isActive ? 'var(--cyan-bright)' : 'var(--text-muted)'}
+                    color={isActive ? 'var(--brand-cyan-neon)' : 'var(--color-text-muted)'}
                     style={{
                       transform: isActive ? 'translateX(2px)' : 'none',
                       transition: 'transform 0.2s ease',
@@ -163,16 +162,13 @@ export default function HowWeWork({ onOpenContact }) {
             className="how-steps-detail"
           >
             <div
-              className="glass-card"
+              className="card-n8n-spark"
               style={{
                 height: '100%',
                 padding: '40px 36px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                background: 'linear-gradient(180deg, rgba(16, 27, 50, 0.9) 0%, rgba(9, 15, 29, 0.95) 100%)',
-                border: '1px solid rgba(0, 210, 255, 0.35)',
-                boxShadow: '0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 210, 255, 0.15)',
               }}
             >
               <div>
@@ -187,12 +183,12 @@ export default function HowWeWork({ onOpenContact }) {
                   <span
                     className="mono"
                     style={{
-                      fontSize: '1rem',
+                      fontSize: '0.9rem',
                       fontWeight: 700,
-                      color: 'var(--cyan-bright)',
+                      color: 'var(--brand-cyan-neon)',
                       background: 'rgba(0, 245, 212, 0.1)',
                       padding: '4px 12px',
-                      borderRadius: 'var(--radius-sm)',
+                      borderRadius: 'var(--radius-full)',
                       border: '1px solid rgba(0, 245, 212, 0.3)',
                     }}
                   >
@@ -200,8 +196,8 @@ export default function HowWeWork({ onOpenContact }) {
                   </span>
                   <span
                     style={{
-                      fontSize: '0.82rem',
-                      color: 'var(--text-secondary)',
+                      fontSize: '0.84rem',
+                      color: 'var(--color-heading-secondary)',
                       fontWeight: 600,
                     }}
                   >
@@ -213,7 +209,7 @@ export default function HowWeWork({ onOpenContact }) {
                   style={{
                     fontSize: '2.2rem',
                     fontWeight: 800,
-                    color: 'var(--text-white)',
+                    color: '#FFFFFF',
                     marginBottom: '16px',
                     letterSpacing: '-0.02em',
                   }}
@@ -225,7 +221,7 @@ export default function HowWeWork({ onOpenContact }) {
                   style={{
                     fontSize: '1.15rem',
                     fontWeight: 500,
-                    color: 'var(--cyan-electric)',
+                    color: 'var(--brand-cyan-electric)',
                     marginBottom: '16px',
                     lineHeight: 1.5,
                   }}
@@ -235,8 +231,8 @@ export default function HowWeWork({ onOpenContact }) {
 
                 <p
                   style={{
-                    fontSize: '0.98rem',
-                    color: 'var(--text-secondary)',
+                    fontSize: '0.96rem',
+                    color: 'var(--color-heading-secondary)',
                     lineHeight: 1.7,
                     marginBottom: '32px',
                   }}
@@ -248,10 +244,10 @@ export default function HowWeWork({ onOpenContact }) {
                 <div>
                   <h5
                     style={{
-                      fontSize: '0.8rem',
+                      fontSize: '0.78rem',
                       textTransform: 'uppercase',
                       letterSpacing: '0.08em',
-                      color: 'var(--text-muted)',
+                      color: 'var(--color-text-muted)',
                       fontWeight: 700,
                       marginBottom: '16px',
                     }}
@@ -275,12 +271,12 @@ export default function HowWeWork({ onOpenContact }) {
                           padding: '10px 14px',
                           background: 'rgba(255, 255, 255, 0.03)',
                           borderRadius: 'var(--radius-sm)',
-                          border: '1px solid rgba(255, 255, 255, 0.06)',
+                          border: '1px solid rgba(255, 255, 255, 0.07)',
                           fontSize: '0.88rem',
-                          color: 'var(--text-primary)',
+                          color: '#FFFFFF',
                         }}
                       >
-                        <CheckCircle2 size={15} color="var(--cyan-bright)" style={{ flexShrink: 0 }} />
+                        <CheckCircle2 size={15} color="var(--brand-cyan-neon)" style={{ flexShrink: 0 }} />
                         <span>{item}</span>
                       </div>
                     ))}
@@ -301,21 +297,23 @@ export default function HowWeWork({ onOpenContact }) {
                   gap: '12px',
                 }}
               >
-                <div style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
+                <div style={{ fontSize: '0.86rem', color: 'var(--color-heading-secondary)' }}>
                   Step {activeStep + 1} of 5 in our delivery lifecycle
                 </div>
-                <button
-                  onClick={onOpenContact}
+                <Link
+                  href="/contact"
                   className="btn btn-primary btn-anim-arrow"
                   style={{
-                    padding: '10px 20px',
-                    fontSize: '0.9rem',
-                    borderRadius: 'var(--radius-md)',
+                    padding: '9px 20px',
+                    fontSize: '0.88rem',
+                    borderRadius: 'var(--radius-full)',
                   }}
                 >
-                  <span>Start with Phase 01</span>
-                  <ArrowRight size={15} />
-                </button>
+                  <span className="btn-label">Start with Phase 01</span>
+                  <span className="btn-icon">
+                    <ArrowRight size={14} />
+                  </span>
+                </Link>
               </div>
             </div>
           </div>

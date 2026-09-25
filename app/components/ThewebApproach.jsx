@@ -76,8 +76,8 @@ export default function ThewebApproach() {
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <div className="section-tag">
-            <Sparkles size={14} />
+          <div className="n8n-badge">
+            <Sparkles size={13} />
             <span>Core Philosophy</span>
           </div>
           <h2 className="section-title">
@@ -88,15 +88,12 @@ export default function ThewebApproach() {
           </p>
         </div>
 
-        {/* Narrative Manifesto Card */}
+        {/* Narrative Manifesto Card in n8n Spark style */}
         <div
-          className="glass-card"
+          className="card-n8n-spark"
           style={{
-            padding: '40px 36px',
+            padding: '44px 38px',
             marginBottom: '48px',
-            background: 'linear-gradient(180deg, rgba(14, 23, 45, 0.9) 0%, rgba(8, 14, 27, 0.95) 100%)',
-            border: '1px solid rgba(0, 210, 255, 0.3)',
-            borderRadius: 'var(--radius-xl)',
             position: 'relative',
           }}
         >
@@ -106,18 +103,18 @@ export default function ThewebApproach() {
               top: '24px',
               right: '28px',
               opacity: 0.12,
-              color: 'var(--cyan-bright)',
+              color: 'var(--brand-cyan-neon)',
             }}
           >
             <Quote size={64} />
           </div>
 
-          <div style={{ maxWidth: '820px' }}>
+          <div style={{ maxWidth: '840px' }}>
             <h3
               style={{
-                fontSize: '1.45rem',
-                fontWeight: 700,
-                color: 'var(--text-white)',
+                fontSize: '1.5rem',
+                fontWeight: 800,
+                color: '#FFFFFF',
                 marginBottom: '16px',
                 lineHeight: 1.4,
               }}
@@ -127,18 +124,18 @@ export default function ThewebApproach() {
             <p
               style={{
                 fontSize: '1.05rem',
-                color: 'var(--text-secondary)',
+                color: 'var(--color-heading-secondary)',
                 lineHeight: 1.7,
               }}
             >
-              The approach stays flexible. The goal is not to force every project through the same rigid template,
+              The approach stays flexible. The goal is not to force every project through the same rigid process,
               but to find the right way forward. That mindset has shaped the work from the beginning, from early experiments
               and student projects to international digital products and businesses.
             </p>
           </div>
         </div>
 
-        {/* 5 Principles Grid */}
+        {/* 5 Principles Grid with n8n Base Cards */}
         <div
           style={{
             display: 'grid',
@@ -152,7 +149,7 @@ export default function ThewebApproach() {
             return (
               <div
                 key={item.num}
-                className="glass-card"
+                className="card-n8n-base"
                 style={{
                   padding: '32px 28px',
                   display: 'flex',
@@ -172,9 +169,9 @@ export default function ThewebApproach() {
                     <span
                       className="mono"
                       style={{
-                        fontSize: '0.85rem',
+                        fontSize: '0.82rem',
                         fontWeight: 700,
-                        color: 'var(--cyan-bright)',
+                        color: 'var(--brand-cyan-neon)',
                       }}
                     >
                       PRINCIPLE {item.num}
@@ -185,8 +182,8 @@ export default function ThewebApproach() {
                         height: '38px',
                         borderRadius: 'var(--radius-sm)',
                         background: 'rgba(0, 210, 255, 0.1)',
-                        border: '1px solid rgba(0, 210, 255, 0.25)',
-                        color: 'var(--cyan-electric)',
+                        border: '1px solid rgba(0, 210, 255, 0.28)',
+                        color: 'var(--brand-cyan-electric)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -199,8 +196,8 @@ export default function ThewebApproach() {
                   <h4
                     style={{
                       fontSize: '1.35rem',
-                      fontWeight: 700,
-                      color: 'var(--text-white)',
+                      fontWeight: 800,
+                      color: '#FFFFFF',
                       marginBottom: '12px',
                     }}
                   >
@@ -210,7 +207,7 @@ export default function ThewebApproach() {
                   <p
                     style={{
                       fontSize: '0.92rem',
-                      color: 'var(--text-secondary)',
+                      color: 'var(--color-heading-secondary)',
                       lineHeight: 1.6,
                       marginBottom: '20px',
                     }}
@@ -223,7 +220,7 @@ export default function ThewebApproach() {
                       background: 'rgba(255, 255, 255, 0.03)',
                       borderRadius: 'var(--radius-sm)',
                       padding: '14px 16px',
-                      border: '1px solid rgba(255, 255, 255, 0.05)',
+                      border: '1px solid rgba(255, 255, 255, 0.06)',
                       marginBottom: '20px',
                     }}
                   >
@@ -233,7 +230,7 @@ export default function ThewebApproach() {
                         fontWeight: 700,
                         textTransform: 'uppercase',
                         letterSpacing: '0.06em',
-                        color: 'var(--text-muted)',
+                        color: 'var(--color-text-muted)',
                         marginBottom: '8px',
                       }}
                     >
@@ -245,13 +242,13 @@ export default function ThewebApproach() {
                           key={i}
                           style={{
                             fontSize: '0.84rem',
-                            color: 'var(--cyan-electric)',
+                            color: 'var(--brand-cyan-electric)',
                             display: 'flex',
                             alignItems: 'baseline',
                             gap: '8px',
                           }}
                         >
-                          <span style={{ color: 'var(--cyan-bright)' }}>•</span>
+                          <span style={{ color: 'var(--brand-cyan-neon)' }}>•</span>
                           <span>{q}</span>
                         </li>
                       ))}
@@ -264,7 +261,7 @@ export default function ThewebApproach() {
                     paddingTop: '16px',
                     borderTop: '1px solid rgba(255, 255, 255, 0.06)',
                     fontSize: '0.8rem',
-                    color: 'var(--text-muted)',
+                    color: 'var(--color-text-muted)',
                     fontStyle: 'italic',
                   }}
                 >
@@ -280,16 +277,16 @@ export default function ThewebApproach() {
           style={{
             textAlign: 'center',
             padding: '24px',
-            background: 'rgba(0, 210, 255, 0.04)',
+            background: 'rgba(0, 210, 255, 0.05)',
             borderRadius: 'var(--radius-lg)',
-            border: '1px dashed rgba(0, 210, 255, 0.3)',
+            border: '1px dashed rgba(0, 210, 255, 0.35)',
           }}
         >
           <p
             style={{
-              fontSize: '1.05rem',
-              fontWeight: 600,
-              color: 'var(--text-white)',
+              fontSize: '1.1rem',
+              fontWeight: 700,
+              color: '#FFFFFF',
             }}
           >
             "The process changes with every project.{' '}

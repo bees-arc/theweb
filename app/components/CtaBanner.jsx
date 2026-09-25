@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Sparkles, ArrowRight, CheckCircle2, Send, MessageSquare } from 'lucide-react';
+import { Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export default function CtaBanner() {
   const [formData, setFormData] = useState({
@@ -20,7 +20,7 @@ export default function CtaBanner() {
 
   return (
     <section id="contact" className="section" style={{ position: 'relative', overflow: 'hidden' }}>
-      {/* n8n-Style Deep Cyan Ambient Glow */}
+      {/* n8n-Style Deep Cyan Ambient Glow Layer */}
       <div
         style={{
           position: 'absolute',
@@ -29,7 +29,7 @@ export default function CtaBanner() {
           transform: 'translateX(-50%)',
           width: '900px',
           height: '450px',
-          background: 'radial-gradient(circle, rgba(0, 210, 255, 0.22) 0%, rgba(0, 245, 212, 0.12) 40%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(0, 210, 255, 0.25) 0%, rgba(0, 245, 212, 0.12) 40%, transparent 70%)',
           filter: 'blur(80px)',
           pointerEvents: 'none',
           zIndex: -1,
@@ -37,14 +37,12 @@ export default function CtaBanner() {
       />
 
       <div className="container">
+        {/* n8n.io Preset Footer CTA Box */}
         <div
-          className="glass-card"
+          className="card-n8n-spark"
           style={{
             padding: '56px 48px',
-            borderRadius: 'var(--radius-xl)',
-            border: '1px solid rgba(0, 210, 255, 0.4)',
-            background: 'linear-gradient(180deg, rgba(16, 27, 52, 0.92) 0%, rgba(8, 14, 28, 0.98) 100%)',
-            boxShadow: '0 30px 80px -20px rgba(0, 0, 0, 0.9), 0 0 60px rgba(0, 210, 255, 0.2)',
+            borderRadius: 'var(--radius-2xl)',
           }}
         >
           <div
@@ -57,34 +55,18 @@ export default function CtaBanner() {
           >
             {/* Left Column: Heading & Ethos */}
             <div style={{ gridColumn: 'span 6' }} className="cta-left-col">
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  padding: '5px 14px',
-                  borderRadius: 'var(--radius-full)',
-                  background: 'rgba(0, 245, 212, 0.1)',
-                  border: '1px solid rgba(0, 245, 212, 0.3)',
-                  fontSize: '0.78rem',
-                  fontWeight: 700,
-                  color: 'var(--cyan-bright)',
-                  letterSpacing: '0.08em',
-                  textTransform: 'uppercase',
-                  marginBottom: '20px',
-                }}
-              >
+              <div className="n8n-badge" style={{ marginBottom: '20px' }}>
                 <Sparkles size={13} />
-                <span>Start a Project</span>
+                <span>START YOUR PROJECT</span>
               </div>
 
               <h2
                 style={{
-                  fontSize: 'clamp(2.2rem, 4vw, 3.2rem)',
+                  fontSize: 'clamp(2.4rem, 4.2vw, 3.4rem)',
                   fontWeight: 800,
                   lineHeight: 1.15,
                   letterSpacing: '-0.03em',
-                  color: 'var(--text-white)',
+                  color: '#FFFFFF',
                   marginBottom: '20px',
                 }}
               >
@@ -95,7 +77,7 @@ export default function CtaBanner() {
               <p
                 style={{
                   fontSize: '1.05rem',
-                  color: 'var(--text-secondary)',
+                  color: 'var(--color-heading-secondary)',
                   lineHeight: 1.65,
                   marginBottom: '32px',
                 }}
@@ -112,16 +94,16 @@ export default function CtaBanner() {
                   gap: '12px',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: 'var(--text-primary)' }}>
-                  <CheckCircle2 size={16} color="var(--cyan-bright)" />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#FFFFFF' }}>
+                  <CheckCircle2 size={16} color="var(--brand-cyan-neon)" />
                   <span>Direct collaboration with senior creative technologists</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: 'var(--text-primary)' }}>
-                  <CheckCircle2 size={16} color="var(--cyan-bright)" />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#FFFFFF' }}>
+                  <CheckCircle2 size={16} color="var(--brand-cyan-neon)" />
                   <span>No rigid dogma: WordPress, React, Next.js or custom AI</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: 'var(--text-primary)' }}>
-                  <CheckCircle2 size={16} color="var(--cyan-bright)" />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#FFFFFF' }}>
+                  <CheckCircle2 size={16} color="var(--brand-cyan-neon)" />
                   <span>From Sri Lanka to Norway & worldwide</span>
                 </div>
               </div>
@@ -144,7 +126,7 @@ export default function CtaBanner() {
                       width: '56px',
                       height: '56px',
                       borderRadius: '50%',
-                      background: 'var(--brand-gradient)',
+                      background: 'var(--n8n-btn-primary)',
                       color: '#050811',
                       display: 'flex',
                       alignItems: 'center',
@@ -157,13 +139,13 @@ export default function CtaBanner() {
                   <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>
                     Message Received!
                   </h3>
-                  <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
+                  <p style={{ fontSize: '0.95rem', color: 'var(--color-heading-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
                     Thank you, {formData.name}. We will review your project details and get back to you within 24 hours to schedule an initial discovery conversation.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
                     className="btn btn-secondary"
-                    style={{ fontSize: '0.88rem', padding: '8px 18px' }}
+                    style={{ fontSize: '0.88rem', padding: '8px 20px', borderRadius: 'var(--radius-full)' }}
                   >
                     Send another inquiry
                   </button>
@@ -173,23 +155,24 @@ export default function CtaBanner() {
                   onSubmit={handleSubmit}
                   style={{
                     background: 'rgba(10, 17, 33, 0.85)',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
-                    borderRadius: 'var(--radius-lg)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    borderRadius: 'var(--radius-xl)',
                     padding: '32px 28px',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '18px',
+                    boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1)',
                   }}
                 >
                   <div>
                     <label
                       style={{
                         display: 'block',
-                        fontSize: '0.8rem',
+                        fontSize: '0.78rem',
                         fontWeight: 700,
                         textTransform: 'uppercase',
                         letterSpacing: '0.06em',
-                        color: 'var(--text-secondary)',
+                        color: 'var(--color-heading-secondary)',
                         marginBottom: '8px',
                       }}
                     >
@@ -205,15 +188,15 @@ export default function CtaBanner() {
                         width: '100%',
                         padding: '12px 16px',
                         background: 'rgba(255, 255, 255, 0.04)',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        border: '1px solid rgba(255, 255, 255, 0.12)',
                         borderRadius: 'var(--radius-sm)',
                         color: '#fff',
                         fontSize: '0.92rem',
                         outline: 'none',
                         transition: 'border-color 0.2s',
                       }}
-                      onFocus={(e) => (e.target.style.borderColor = 'var(--cyan-bright)')}
-                      onBlur={(e) => (e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)')}
+                      onFocus={(e) => (e.target.style.borderColor = 'var(--brand-cyan-neon)')}
+                      onBlur={(e) => (e.target.style.borderColor = 'rgba(255, 255, 255, 0.12)')}
                     />
                   </div>
 
@@ -221,11 +204,11 @@ export default function CtaBanner() {
                     <label
                       style={{
                         display: 'block',
-                        fontSize: '0.8rem',
+                        fontSize: '0.78rem',
                         fontWeight: 700,
                         textTransform: 'uppercase',
                         letterSpacing: '0.06em',
-                        color: 'var(--text-secondary)',
+                        color: 'var(--color-heading-secondary)',
                         marginBottom: '8px',
                       }}
                     >
@@ -241,15 +224,15 @@ export default function CtaBanner() {
                         width: '100%',
                         padding: '12px 16px',
                         background: 'rgba(255, 255, 255, 0.04)',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        border: '1px solid rgba(255, 255, 255, 0.12)',
                         borderRadius: 'var(--radius-sm)',
                         color: '#fff',
                         fontSize: '0.92rem',
                         outline: 'none',
                         transition: 'border-color 0.2s',
                       }}
-                      onFocus={(e) => (e.target.style.borderColor = 'var(--cyan-bright)')}
-                      onBlur={(e) => (e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)')}
+                      onFocus={(e) => (e.target.style.borderColor = 'var(--brand-cyan-neon)')}
+                      onBlur={(e) => (e.target.style.borderColor = 'rgba(255, 255, 255, 0.12)')}
                     />
                   </div>
 
@@ -257,11 +240,11 @@ export default function CtaBanner() {
                     <label
                       style={{
                         display: 'block',
-                        fontSize: '0.8rem',
+                        fontSize: '0.78rem',
                         fontWeight: 700,
                         textTransform: 'uppercase',
                         letterSpacing: '0.06em',
-                        color: 'var(--text-secondary)',
+                        color: 'var(--color-heading-secondary)',
                         marginBottom: '8px',
                       }}
                     >
@@ -274,7 +257,7 @@ export default function CtaBanner() {
                         width: '100%',
                         padding: '12px 16px',
                         background: '#0e1628',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        border: '1px solid rgba(255, 255, 255, 0.12)',
                         borderRadius: 'var(--radius-sm)',
                         color: '#fff',
                         fontSize: '0.92rem',
@@ -293,11 +276,11 @@ export default function CtaBanner() {
                     <label
                       style={{
                         display: 'block',
-                        fontSize: '0.8rem',
+                        fontSize: '0.78rem',
                         fontWeight: 700,
                         textTransform: 'uppercase',
                         letterSpacing: '0.06em',
-                        color: 'var(--text-secondary)',
+                        color: 'var(--color-heading-secondary)',
                         marginBottom: '8px',
                       }}
                     >
@@ -312,15 +295,15 @@ export default function CtaBanner() {
                         width: '100%',
                         padding: '12px 16px',
                         background: 'rgba(255, 255, 255, 0.04)',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        border: '1px solid rgba(255, 255, 255, 0.12)',
                         borderRadius: 'var(--radius-sm)',
                         color: '#fff',
                         fontSize: '0.92rem',
                         outline: 'none',
                         resize: 'vertical',
                       }}
-                      onFocus={(e) => (e.target.style.borderColor = 'var(--cyan-bright)')}
-                      onBlur={(e) => (e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)')}
+                      onFocus={(e) => (e.target.style.borderColor = 'var(--brand-cyan-neon)')}
+                      onBlur={(e) => (e.target.style.borderColor = 'rgba(255, 255, 255, 0.12)')}
                     />
                   </div>
 
@@ -330,13 +313,15 @@ export default function CtaBanner() {
                     style={{
                       width: '100%',
                       padding: '14px',
-                      fontSize: '0.98rem',
-                      borderRadius: 'var(--radius-md)',
+                      fontSize: '0.96rem',
+                      borderRadius: 'var(--radius-full)',
                       marginTop: '4px',
                     }}
                   >
-                    <span>Let's build it</span>
-                    <ArrowRight size={16} />
+                    <span className="btn-label">Let's build it</span>
+                    <span className="btn-icon">
+                      <ArrowRight size={16} />
+                    </span>
                   </button>
                 </form>
               )}

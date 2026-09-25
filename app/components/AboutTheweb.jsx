@@ -1,6 +1,6 @@
 'use client';
 
-import { Sparkles, Milestone, Calendar, MapPin, Globe, CheckCircle2 } from 'lucide-react';
+import { Sparkles, Calendar, Globe, Milestone } from 'lucide-react';
 
 export default function AboutTheweb() {
   const milestones = [
@@ -65,9 +65,9 @@ export default function AboutTheweb() {
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <div className="section-tag">
-            <Sparkles size={14} />
-            <span>Origin & Journey</span>
+          <div className="n8n-badge">
+            <Sparkles size={13} />
+            <span>Origin Story & Journey</span>
           </div>
           <h2 className="section-title">
             About Theweb
@@ -79,39 +79,36 @@ export default function AboutTheweb() {
           </p>
         </div>
 
-        {/* Narrative Callout Banner */}
+        {/* Narrative Callout Banner in n8n Spark style */}
         <div
-          className="glass-card"
+          className="card-n8n-spark"
           style={{
-            padding: '36px 32px',
+            padding: '40px 36px',
             marginBottom: '56px',
-            border: '1px solid rgba(0, 210, 255, 0.28)',
-            background: 'linear-gradient(135deg, rgba(16, 26, 48, 0.85) 0%, rgba(9, 14, 28, 0.95) 100%)',
-            borderRadius: 'var(--radius-xl)',
           }}
         >
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '28px' }}>
             <div>
               <div
                 style={{
                   fontSize: '0.8rem',
                   fontWeight: 700,
                   textTransform: 'uppercase',
-                  color: 'var(--cyan-bright)',
+                  color: 'var(--brand-cyan-neon)',
                   letterSpacing: '0.08em',
                   marginBottom: '10px',
                 }}
               >
                 The Evolution
               </div>
-              <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--text-white)', lineHeight: 1.35 }}>
+              <h3 style={{ fontSize: '1.45rem', fontWeight: 800, color: '#FFFFFF', lineHeight: 1.35 }}>
                 "The name had existed before the company.<br />
                 The experience came before the business.<br />
                 The story came first. The company grew from it."
               </h3>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <p style={{ fontSize: '0.96rem', color: 'var(--text-secondary)', lineHeight: 1.65 }}>
+              <p style={{ fontSize: '0.96rem', color: 'var(--color-heading-secondary)', lineHeight: 1.7 }}>
                 From student experiments and Microsoft Imagine Cup recognition in Sri Lanka to delivering over 90
                 international design and UX projects for Norwegian enterprises, our DNA is grounded in solving real problems
                 rather than chasing hollow hype.
@@ -138,7 +135,7 @@ export default function AboutTheweb() {
                 marginBottom: '48px',
               }}
             >
-              {/* Timeline Bullet Node */}
+              {/* Timeline Bullet Node with cyan glow */}
               <div
                 style={{
                   position: 'absolute',
@@ -147,20 +144,17 @@ export default function AboutTheweb() {
                   width: '20px',
                   height: '20px',
                   borderRadius: '50%',
-                  background: '#070c18',
-                  border: '3px solid var(--cyan-bright)',
-                  boxShadow: '0 0 12px var(--cyan-bright)',
+                  background: '#090e1a',
+                  border: '3px solid var(--brand-cyan-neon)',
+                  boxShadow: '0 0 14px var(--brand-cyan-neon)',
                 }}
               />
 
-              {/* Milestone Card */}
+              {/* Milestone Card in n8n Base style */}
               <div
-                className="glass-card"
+                className="card-n8n-base"
                 style={{
                   padding: '28px 28px',
-                  background: 'rgba(14, 23, 44, 0.65)',
-                  border: '1px solid var(--border-subtle)',
-                  borderRadius: 'var(--radius-lg)',
                 }}
               >
                 <div
@@ -177,9 +171,9 @@ export default function AboutTheweb() {
                     <span
                       className="mono"
                       style={{
-                        fontSize: '1.15rem',
+                        fontSize: '1.2rem',
                         fontWeight: 800,
-                        color: 'var(--cyan-bright)',
+                        color: 'var(--brand-cyan-neon)',
                       }}
                     >
                       {item.year}
@@ -187,12 +181,12 @@ export default function AboutTheweb() {
                     <span
                       style={{
                         fontSize: '0.76rem',
-                        fontWeight: 600,
-                        color: 'var(--cyan-electric)',
-                        background: 'rgba(0, 210, 255, 0.08)',
-                        padding: '3px 10px',
+                        fontWeight: 700,
+                        color: 'var(--brand-cyan-electric)',
+                        background: 'rgba(0, 210, 255, 0.1)',
+                        padding: '4px 12px',
                         borderRadius: 'var(--radius-full)',
-                        border: '1px solid rgba(0, 210, 255, 0.2)',
+                        border: '1px solid rgba(0, 210, 255, 0.25)',
                       }}
                     >
                       {item.badge}
@@ -204,7 +198,7 @@ export default function AboutTheweb() {
                   style={{
                     fontSize: '1.4rem',
                     fontWeight: 800,
-                    color: 'var(--text-white)',
+                    color: '#FFFFFF',
                     marginBottom: '10px',
                   }}
                 >
@@ -215,7 +209,7 @@ export default function AboutTheweb() {
                   style={{
                     fontSize: '1.02rem',
                     fontWeight: 600,
-                    color: 'var(--text-primary)',
+                    color: '#FFFFFF',
                     marginBottom: '12px',
                     lineHeight: 1.5,
                   }}
@@ -226,7 +220,7 @@ export default function AboutTheweb() {
                 <p
                   style={{
                     fontSize: '0.92rem',
-                    color: 'var(--text-secondary)',
+                    color: 'var(--color-heading-secondary)',
                     lineHeight: 1.65,
                   }}
                 >

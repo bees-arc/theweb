@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Sparkles, Code2, Layers, Cpu, Database, Wrench, Shield, CheckCircle2 } from 'lucide-react';
+import { Sparkles, CheckCircle2 } from 'lucide-react';
 
 export default function Technology() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -90,8 +90,8 @@ export default function Technology() {
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <div className="section-tag">
-            <Sparkles size={14} />
+          <div className="n8n-badge">
+            <Sparkles size={13} />
             <span>Modern Engineering</span>
           </div>
           <h2 className="section-title">
@@ -103,7 +103,7 @@ export default function Technology() {
           </p>
         </div>
 
-        {/* Filter Pills */}
+        {/* Filter Pills with n8n chip style */}
         <div
           style={{
             display: 'flex',
@@ -114,34 +114,22 @@ export default function Technology() {
             marginBottom: '40px',
           }}
         >
-          {techCategories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setSelectedCategory(cat.id)}
-              style={{
-                padding: '8px 18px',
-                borderRadius: 'var(--radius-full)',
-                fontSize: '0.85rem',
-                fontWeight: 600,
-                border:
-                  selectedCategory === cat.id
-                    ? '1px solid var(--cyan-bright)'
-                    : '1px solid var(--border-subtle)',
-                background:
-                  selectedCategory === cat.id
-                    ? 'rgba(0, 245, 212, 0.14)'
-                    : 'rgba(255, 255, 255, 0.04)',
-                color: selectedCategory === cat.id ? '#FFFFFF' : 'var(--text-secondary)',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease',
-              }}
-            >
-              {cat.label}
-            </button>
-          ))}
+          {techCategories.map((cat) => {
+            const isActive = selectedCategory === cat.id;
+            return (
+              <button
+                key={cat.id}
+                onClick={() => setSelectedCategory(cat.id)}
+                className={`btn-chip ${isActive ? 'active' : ''}`}
+                style={{ cursor: 'pointer' }}
+              >
+                {cat.label}
+              </button>
+            );
+          })}
         </div>
 
-        {/* Technologies Grid */}
+        {/* Technologies Grid in n8n Base Card Style */}
         <div
           style={{
             display: 'grid',
@@ -152,7 +140,7 @@ export default function Technology() {
           {filteredTech.map((item, idx) => (
             <div
               key={idx}
-              className="glass-card"
+              className="card-n8n-base"
               style={{
                 padding: '24px 22px',
                 display: 'flex',
@@ -173,7 +161,7 @@ export default function Technology() {
                     style={{
                       fontSize: '1.25rem',
                       fontWeight: 800,
-                      color: 'var(--text-white)',
+                      color: '#FFFFFF',
                     }}
                   >
                     {item.name}
@@ -182,10 +170,10 @@ export default function Technology() {
                     style={{
                       fontSize: '0.72rem',
                       fontWeight: 700,
-                      color: 'var(--cyan-bright)',
+                      color: 'var(--brand-cyan-neon)',
                       background: 'rgba(0, 245, 212, 0.1)',
                       border: '1px solid rgba(0, 245, 212, 0.25)',
-                      padding: '3px 8px',
+                      padding: '3px 10px',
                       borderRadius: 'var(--radius-full)',
                     }}
                   >
@@ -197,7 +185,7 @@ export default function Technology() {
                   style={{
                     fontSize: '0.84rem',
                     fontWeight: 600,
-                    color: 'var(--cyan-electric)',
+                    color: 'var(--brand-cyan-electric)',
                     marginBottom: '8px',
                   }}
                 >
@@ -207,7 +195,7 @@ export default function Technology() {
                 <p
                   style={{
                     fontSize: '0.88rem',
-                    color: 'var(--text-secondary)',
+                    color: 'var(--color-heading-secondary)',
                     lineHeight: 1.5,
                   }}
                 >
@@ -219,15 +207,15 @@ export default function Technology() {
                 style={{
                   marginTop: '18px',
                   paddingTop: '12px',
-                  borderTop: '1px solid rgba(255, 255, 255, 0.05)',
+                  borderTop: '1px solid rgba(255, 255, 255, 0.06)',
                   fontSize: '0.78rem',
-                  color: 'var(--text-muted)',
+                  color: 'var(--color-text-muted)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '6px',
                 }}
               >
-                <CheckCircle2 size={13} color="var(--cyan-bright)" />
+                <CheckCircle2 size={13} color="var(--brand-cyan-neon)" />
                 <span>Production Tested</span>
               </div>
             </div>

@@ -1,131 +1,105 @@
 'use client';
 
 import { useState } from 'react';
-import { ArrowRight, Sparkles, CheckCircle2, Layers, Cpu, Compass, Play, RefreshCw } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowRight, Sparkles, Compass, Layers, Cpu, RefreshCw, CheckCircle2, Play, Code2, Globe, Laptop, Palette } from 'lucide-react';
 
-export default function Hero({ onOpenContact }) {
-  const [activeNode, setActiveNode] = useState(2); // 0 to 4
+export default function Hero() {
+  const [activeTab, setActiveTab] = useState(0);
 
-  const workflowSteps = [
+  const tabs = [
     {
       id: 0,
-      step: '01',
-      title: 'Understand',
-      desc: 'We learn about your business, users and goals.',
-      icon: Compass,
-      tag: 'Discovery & Research',
-      detail: 'Stakeholder interviews, user empathy mapping, and identifying the true "why" before writing a line of code.',
+      title: 'Digital Products can',
+      action: 'Turn complex logic into scalable web software',
+      nodes: [
+        { id: 'n1', title: 'User Problem', type: 'Trigger', badge: 'Input', color: '#00F5D4', desc: 'Identify core pain points & constraints' },
+        { id: 'n2', title: 'UX Architecture', type: 'Design', badge: 'Wireframe', color: '#00D2FF', desc: 'Map frictionless user journeys' },
+        { id: 'n3', title: 'Next.js App', type: 'Engineering', badge: 'React 18', color: '#0084FF', desc: 'Build reactive state & fast APIs' },
+        { id: 'n4', title: 'Autonomous AI', type: 'Workflow', badge: 'Automation', color: '#00F5D4', desc: 'Integrate intelligent pipelines' },
+        { id: 'n5', title: 'Live Product', type: 'Production', badge: 'Scale', color: '#10B981', desc: 'Deliver software people actually use' },
+      ],
+      output: '99.9% Uptime · Sub-second Latency · High User Adoption',
     },
     {
       id: 1,
-      step: '02',
-      title: 'Define',
-      desc: 'We turn the problem into a clear direction.',
-      icon: Sparkles,
-      tag: 'Strategy & Scope',
-      detail: 'Formulating core user stories, technical architecture, and a focused product roadmap.',
+      title: 'Websites can',
+      action: 'Convert visitors with lightning speed & clarity',
+      nodes: [
+        { id: 'n1', title: 'Brand Story', type: 'Discovery', badge: 'Message', color: '#00F5D4', desc: 'Articulate unique value proposition' },
+        { id: 'n2', title: 'Visual System', type: 'Design', badge: 'Tokens', color: '#00D2FF', desc: 'Craft aesthetic modern typography & layout' },
+        { id: 'n3', title: 'Jamstack Next.js', type: 'Build', badge: 'SSR / SSG', color: '#0084FF', desc: 'Zero bloat, pure Core Web Vitals' },
+        { id: 'n4', title: 'Headless CMS', type: 'Content', badge: 'WordPress', color: '#00F5D4', desc: 'Empower marketing team autonomy' },
+        { id: 'n5', title: 'Global Launch', type: 'Deploy', badge: 'Edge CDN', color: '#10B981', desc: 'Instant conversion-ready presence' },
+      ],
+      output: '100% Lighthouse Performance · SEO Optimized · High Conversion',
     },
     {
       id: 2,
-      step: '03',
-      title: 'Design',
-      desc: 'We create the experience, interface and visual system.',
-      icon: Layers,
-      tag: 'UX / UI & Design System',
-      detail: 'Crafting responsive prototypes, accessible components, and a brand system that feels effortless to use.',
+      title: 'Brand & UX can',
+      action: 'Make complicated systems feel intuitive',
+      nodes: [
+        { id: 'n1', title: 'User Research', type: 'Discovery', badge: 'Interviews', color: '#00F5D4', desc: 'Uncover psychological user motivations' },
+        { id: 'n2', title: 'Figma System', type: 'Tokens', badge: 'Components', color: '#00D2FF', desc: 'Modular design system & color palettes' },
+        { id: 'n3', title: 'Micro-Interactions', type: 'Motion', badge: 'Prototype', color: '#0084FF', desc: 'Delightful kinetic feedback on clicks' },
+        { id: 'n4', title: 'Usability Audit', type: 'Validation', badge: 'Testing', color: '#00F5D4', desc: 'Refine until zero friction remains' },
+        { id: 'n5', title: 'Design Handoff', type: 'Delivery', badge: 'Code-Ready', color: '#10B981', desc: 'Seamless engineering alignment' },
+      ],
+      output: 'Eliminates Cognitive Friction · Builds Lasting User Trust',
     },
     {
       id: 3,
-      step: '04',
-      title: 'Build',
-      desc: 'We turn the design into a reliable digital product.',
-      icon: Cpu,
-      tag: 'Next.js, React & AI',
-      detail: 'Engineering high-performance web applications, clean API integrations, and robust codebases.',
-    },
-    {
-      id: 4,
-      step: '05',
-      title: 'Improve',
-      desc: 'We launch, learn and keep improving.',
-      icon: RefreshCw,
-      tag: 'Telemetry & Evolution',
-      detail: 'Analyzing user feedback in production, iterating on metrics, and continuous optimization.',
+      title: 'How We Work can',
+      action: 'Guide an idea to reality in 5 disciplined phases',
+      nodes: [
+        { id: 'n1', title: '01 Understand', type: 'Research', badge: 'Goals', color: '#00F5D4', desc: 'We learn about your business, users and goals' },
+        { id: 'n2', title: '02 Define', type: 'Strategy', badge: 'Direction', color: '#00D2FF', desc: 'We turn the problem into a clear direction' },
+        { id: 'n3', title: '03 Design', type: 'Interface', badge: 'Experience', color: '#0084FF', desc: 'We create the experience and visual system' },
+        { id: 'n4', title: '04 Build', type: 'Engineering', badge: 'Reliable', color: '#00F5D4', desc: 'We turn design into a reliable digital product' },
+        { id: 'n5', title: '05 Improve', type: 'Iteration', badge: 'Learn', color: '#10B981', desc: 'We launch, learn and keep improving' },
+      ],
+      output: 'Predictable Timelines · Total Transparency · Continuous Value',
     },
   ];
+
+  const currentWorkflow = tabs[activeTab];
 
   return (
     <section
       style={{
         position: 'relative',
         paddingTop: '160px',
-        paddingBottom: '100px',
+        paddingBottom: '90px',
         overflow: 'hidden',
       }}
     >
-      {/* Background Radial Glow */}
-      <div
-        style={{
-          position: 'absolute',
-          top: '10%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '800px',
-          height: '500px',
-          background: 'radial-gradient(circle, rgba(0, 210, 255, 0.16) 0%, rgba(0, 245, 212, 0.05) 45%, transparent 70%)',
-          filter: 'blur(70px)',
-          zIndex: -1,
-          pointerEvents: 'none',
-        }}
-      />
+      <div className="n8n-grid-bg" />
 
       <div className="container">
-        {/* Hero Top Copy */}
+        {/* Hero Top Copy matching n8n.io */}
         <div style={{ textAlign: 'center', maxWidth: '880px', margin: '0 auto 48px' }}>
-          {/* Eyebrow Badge */}
-          <div
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '6px 16px',
-              borderRadius: 'var(--radius-full)',
-              background: 'rgba(0, 210, 255, 0.08)',
-              border: '1px solid rgba(0, 210, 255, 0.28)',
-              boxShadow: '0 0 20px rgba(0, 210, 255, 0.15)',
-              marginBottom: '28px',
-            }}
-          >
+          {/* n8n Eyebrow Pill */}
+          <div className="n8n-badge">
             <span
               style={{
-                width: '8px',
-                height: '8px',
+                width: '7px',
+                height: '7px',
                 borderRadius: '50%',
-                background: 'var(--cyan-bright)',
-                boxShadow: '0 0 10px var(--cyan-bright)',
+                background: 'var(--brand-cyan-neon)',
+                boxShadow: '0 0 10px var(--brand-cyan-neon)',
               }}
             />
-            <span
-              style={{
-                fontSize: '0.82rem',
-                fontWeight: 600,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                color: 'var(--cyan-bright)',
-              }}
-            >
-              Theweb Agency · Digital Products & UX Studio
-            </span>
+            <span>✦ THEWEB AGENCY · DIGITAL PRODUCT & UX STUDIO</span>
           </div>
 
-          {/* Main Headline */}
+          {/* Main Headline with n8n typography */}
           <h1
             style={{
-              fontSize: 'clamp(2.5rem, 5.5vw, 4.4rem)',
+              fontSize: 'clamp(2.6rem, 5.5vw, 4.4rem)',
               fontWeight: 800,
-              lineHeight: 1.1,
+              lineHeight: 1.12,
               letterSpacing: '-0.035em',
-              color: 'var(--text-white)',
+              color: '#FFFFFF',
               marginBottom: '24px',
             }}
           >
@@ -139,9 +113,9 @@ export default function Hero({ onOpenContact }) {
           <p
             style={{
               fontSize: 'clamp(1.1rem, 2vw, 1.25rem)',
-              color: 'var(--text-secondary)',
-              lineHeight: 1.6,
-              maxWidth: '720px',
+              color: 'var(--color-heading-secondary)',
+              lineHeight: 1.65,
+              maxWidth: '740px',
               margin: '0 auto 36px',
             }}
           >
@@ -149,7 +123,7 @@ export default function Hero({ onOpenContact }) {
             intuitive digital products, modern high-performance websites, and lasting brand experiences.
           </p>
 
-          {/* Call to Actions */}
+          {/* Dual Action Buttons matching n8n */}
           <div
             style={{
               display: 'flex',
@@ -159,187 +133,240 @@ export default function Hero({ onOpenContact }) {
               flexWrap: 'wrap',
             }}
           >
-            <button
-              onClick={onOpenContact}
-              className="btn btn-primary btn-anim-arrow"
-              style={{
-                padding: '14px 28px',
-                fontSize: '1rem',
-                borderRadius: 'var(--radius-md)',
-              }}
-            >
-              <span>Have something in mind? Let's build it</span>
-              <ArrowRight size={18} />
-            </button>
-            <a
-              href="#approach"
-              className="btn btn-secondary"
-              style={{
-                padding: '14px 26px',
-                fontSize: '1rem',
-                borderRadius: 'var(--radius-md)',
-              }}
-            >
+            <Link href="/contact" className="btn btn-primary btn-anim-arrow">
+              <span className="btn-label">Have something in mind? Let's build it</span>
+              <span className="btn-icon">
+                <ArrowRight size={16} />
+              </span>
+            </Link>
+
+            <Link href="/how-we-work" className="btn btn-secondary">
               <span>Theweb Approach</span>
-            </a>
+            </Link>
           </div>
         </div>
 
-        {/* n8n-Style Interactive Workflow Canvas */}
+        {/* n8n.io Feature-Tabs Header Switcher */}
         <div
-          className="glass-card"
           style={{
-            padding: '32px 24px',
-            borderRadius: 'var(--radius-xl)',
-            border: '1px solid rgba(0, 210, 255, 0.22)',
-            background: 'linear-gradient(180deg, rgba(14, 23, 44, 0.85) 0%, rgba(8, 13, 25, 0.95) 100%)',
-            boxShadow: '0 30px 60px -20px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 210, 255, 0.1)',
-            marginBottom: '40px',
+            maxWidth: '1100px',
+            margin: '0 auto 20px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px',
+            flexWrap: 'wrap',
           }}
         >
-          {/* Canvas Header bar */}
+          {tabs.map((tab, idx) => {
+            const isActive = activeTab === idx;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(idx)}
+                style={{
+                  padding: '10px 20px',
+                  borderRadius: 'var(--radius-full)',
+                  border: isActive
+                    ? '1px solid rgba(0, 245, 212, 0.5)'
+                    : '1px solid rgba(255, 255, 255, 0.08)',
+                  background: isActive
+                    ? 'linear-gradient(180deg, rgba(0, 210, 255, 0.18) 0%, rgba(14, 22, 40, 0.6) 100%)'
+                    : 'rgba(255, 255, 255, 0.03)',
+                  color: isActive ? '#FFFFFF' : 'var(--color-heading-secondary)',
+                  fontWeight: isActive ? 700 : 500,
+                  fontSize: '0.88rem',
+                  cursor: 'pointer',
+                  boxShadow: isActive ? '0 0 20px rgba(0, 210, 255, 0.25)' : 'none',
+                  transition: 'all 0.25s ease',
+                }}
+              >
+                <strong style={{ color: isActive ? 'var(--brand-cyan-neon)' : 'inherit' }}>
+                  {tab.title}
+                </strong>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* n8n Interactive Visual Workflow Canvas */}
+        <div
+          className="card-n8n-spark"
+          style={{
+            maxWidth: '1100px',
+            margin: '0 auto 48px',
+            padding: '32px 28px',
+            borderRadius: 'var(--radius-2xl)',
+            overflow: 'hidden',
+          }}
+        >
+          {/* Canvas Window Header bar */}
           <div
             style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
               borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-              paddingBottom: '20px',
+              paddingBottom: '18px',
               marginBottom: '28px',
               flexWrap: 'wrap',
               gap: '12px',
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#EF4444' }} />
-              <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#F59E0B' }} />
-              <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#10B981' }} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span style={{ width: '11px', height: '11px', borderRadius: '50%', background: '#EF4444' }} />
+              <span style={{ width: '11px', height: '11px', borderRadius: '50%', background: '#F59E0B' }} />
+              <span style={{ width: '11px', height: '11px', borderRadius: '50%', background: '#10B981' }} />
               <span
                 style={{
-                  fontSize: '0.85rem',
+                  fontSize: '0.84rem',
                   fontWeight: 600,
-                  color: 'var(--text-secondary)',
-                  marginLeft: '8px',
+                  color: 'var(--color-heading-secondary)',
+                  marginLeft: '10px',
                 }}
               >
-                Theweb Production Engine · Dynamic Product Canvas
+                Theweb Production Canvas — {currentWorkflow.action}
               </span>
             </div>
+
             <div
               style={{
-                fontSize: '0.8rem',
-                color: 'var(--cyan-electric)',
-                background: 'rgba(0, 210, 255, 0.1)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontSize: '0.78rem',
+                color: 'var(--brand-cyan-neon)',
+                background: 'rgba(0, 245, 212, 0.1)',
                 padding: '4px 12px',
                 borderRadius: 'var(--radius-full)',
                 fontWeight: 600,
+                border: '1px solid rgba(0, 245, 212, 0.25)',
               }}
             >
-              Interactive: Click any stage to inspect
+              <span
+                style={{
+                  width: '6px',
+                  height: '6px',
+                  borderRadius: '50%',
+                  background: 'var(--brand-cyan-neon)',
+                  boxShadow: '0 0 8px var(--brand-cyan-neon)',
+                }}
+              />
+              <span>Live Workflow Traceable</span>
             </div>
           </div>
 
-          {/* Connected Workflow Nodes */}
+          {/* Workflow Connected Nodes */}
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(185px, 1fr))',
               gap: '16px',
               position: 'relative',
             }}
           >
-            {workflowSteps.map((node, index) => {
-              const IconComp = node.icon;
-              const isActive = activeNode === index;
-              return (
+            {currentWorkflow.nodes.map((node, i) => (
+              <div
+                key={node.id}
+                style={{
+                  background: 'rgba(11, 18, 34, 0.85)',
+                  border: '1px solid rgba(255, 255, 255, 0.12)',
+                  borderRadius: 'var(--radius-md)',
+                  padding: '18px 16px',
+                  position: 'relative',
+                  boxShadow: '0 10px 25px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                  transition: 'all 0.25s ease',
+                }}
+              >
+                {/* Input port dot */}
                 <div
-                  key={node.id}
-                  onClick={() => setActiveNode(index)}
                   style={{
-                    background: isActive
-                      ? 'linear-gradient(180deg, rgba(0, 210, 255, 0.18) 0%, rgba(14, 26, 50, 0.8) 100%)'
-                      : 'rgba(17, 28, 52, 0.5)',
-                    border: isActive
-                      ? '1px solid rgba(0, 245, 212, 0.7)'
-                      : '1px solid rgba(255, 255, 255, 0.08)',
-                    borderRadius: 'var(--radius-md)',
-                    padding: '20px 18px',
-                    cursor: 'pointer',
-                    transition: 'all 0.25s ease',
-                    boxShadow: isActive
-                      ? '0 0 25px rgba(0, 210, 255, 0.35), inset 0 1px 0 rgba(255,255,255,0.2)'
-                      : 'none',
-                    transform: isActive ? 'scale(1.02)' : 'scale(1)',
-                    position: 'relative',
+                    position: 'absolute',
+                    left: '-6px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    width: '10px',
+                    height: '10px',
+                    borderRadius: '50%',
+                    background: '#090e1a',
+                    border: `2px solid ${node.color}`,
+                    boxShadow: `0 0 6px ${node.color}`,
+                  }}
+                />
+
+                {/* Output port dot */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    right: '-6px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    width: '10px',
+                    height: '10px',
+                    borderRadius: '50%',
+                    background: '#090e1a',
+                    border: `2px solid ${node.color}`,
+                    boxShadow: `0 0 6px ${node.color}`,
+                  }}
+                />
+
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
+                  <span
+                    className="mono"
+                    style={{
+                      fontSize: '0.72rem',
+                      fontWeight: 700,
+                      color: node.color,
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    {node.type}
+                  </span>
+                  <span
+                    style={{
+                      fontSize: '0.68rem',
+                      background: 'rgba(255, 255, 255, 0.06)',
+                      padding: '2px 6px',
+                      borderRadius: '4px',
+                      color: 'var(--color-heading-secondary)',
+                    }}
+                  >
+                    {node.badge}
+                  </span>
+                </div>
+
+                <h4
+                  style={{
+                    fontSize: '1rem',
+                    fontWeight: 700,
+                    color: '#FFFFFF',
+                    marginBottom: '6px',
                   }}
                 >
-                  {/* Step pill */}
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      marginBottom: '12px',
-                    }}
-                  >
-                    <span
-                      className="mono"
-                      style={{
-                        fontSize: '0.75rem',
-                        fontWeight: 700,
-                        color: isActive ? 'var(--cyan-bright)' : 'var(--text-muted)',
-                      }}
-                    >
-                      {node.step}
-                    </span>
-                    <div
-                      style={{
-                        width: '28px',
-                        height: '28px',
-                        borderRadius: '6px',
-                        background: isActive ? 'var(--brand-gradient)' : 'rgba(255, 255, 255, 0.06)',
-                        color: isActive ? '#050811' : 'var(--text-secondary)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                      }}
-                    >
-                      <IconComp size={15} />
-                    </div>
-                  </div>
+                  {node.title}
+                </h4>
 
-                  <h3
-                    style={{
-                      fontSize: '1.1rem',
-                      fontWeight: 700,
-                      color: isActive ? '#FFFFFF' : 'var(--text-primary)',
-                      marginBottom: '6px',
-                    }}
-                  >
-                    {node.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: '0.85rem',
-                      color: isActive ? '#D1DFEC' : 'var(--text-secondary)',
-                      lineHeight: 1.45,
-                    }}
-                  >
-                    {node.desc}
-                  </p>
-                </div>
-              );
-            })}
+                <p
+                  style={{
+                    fontSize: '0.8rem',
+                    color: 'var(--color-heading-secondary)',
+                    lineHeight: 1.45,
+                  }}
+                >
+                  {node.desc}
+                </p>
+              </div>
+            ))}
           </div>
 
-          {/* Active Node Detail Inspector Bar */}
+          {/* Workflow Outcome Status Bar */}
           <div
             style={{
               marginTop: '24px',
-              padding: '16px 20px',
-              background: 'rgba(5, 10, 20, 0.65)',
+              padding: '14px 20px',
+              background: 'rgba(5, 9, 18, 0.7)',
               borderRadius: 'var(--radius-md)',
-              border: '1px solid rgba(0, 210, 255, 0.15)',
+              border: '1px solid rgba(0, 210, 255, 0.2)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
@@ -347,106 +374,82 @@ export default function Hero({ onOpenContact }) {
               gap: '12px',
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <span
-                style={{
-                  display: 'inline-block',
-                  padding: '4px 10px',
-                  background: 'var(--brand-gradient)',
-                  color: '#050811',
-                  borderRadius: 'var(--radius-sm)',
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                }}
-              >
-                ACTIVE INSPECTOR · {workflowSteps[activeNode].step} {workflowSteps[activeNode].title}
-              </span>
-              <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                {workflowSteps[activeNode].detail}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <CheckCircle2 size={16} color="var(--brand-cyan-neon)" />
+              <span style={{ fontSize: '0.85rem', color: 'var(--color-heading-primary)', fontWeight: 600 }}>
+                {currentWorkflow.output}
               </span>
             </div>
-            <a
-              href="#how-we-work"
+            <Link
+              href="/how-we-work"
               style={{
-                fontSize: '0.85rem',
-                color: 'var(--cyan-electric)',
+                fontSize: '0.82rem',
+                color: 'var(--brand-cyan-electric)',
                 fontWeight: 600,
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '6px',
               }}
             >
-              <span>View full process</span>
-              <ArrowRight size={14} />
-            </a>
+              <span>Explore our complete workflow</span>
+              <ArrowRight size={13} />
+            </Link>
           </div>
         </div>
 
-        {/* n8n Style Social Proof & Achievement Metrics */}
+        {/* n8n Achievement Cards Grid (Top 50 GitHub / 200k+ style) */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: '16px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: '20px',
           }}
         >
-          <div className="glass-card" style={{ padding: '24px' }}>
-            <div
-              className="text-gradient"
-              style={{ fontSize: '2.5rem', fontWeight: 800, lineHeight: 1, marginBottom: '8px' }}
-            >
+          <div className="card-n8n-base" style={{ padding: '28px 24px' }}>
+            <div className="text-gradient" style={{ fontSize: '2.5rem', fontWeight: 800, lineHeight: 1, marginBottom: '10px' }}>
               90+
             </div>
-            <div style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-white)', marginBottom: '4px' }}>
-              International Projects
+            <div style={{ fontSize: '1rem', fontWeight: 700, color: '#fff', marginBottom: '6px' }}>
+              International Deliveries
             </div>
-            <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.4 }}>
-              Delivered UX, digital systems & web products for Norwegian businesses and global teams.
+            <div style={{ fontSize: '0.86rem', color: 'var(--color-heading-secondary)', lineHeight: 1.5 }}>
+              Digital products, UI systems & websites delivered for Norwegian businesses across diverse sectors.
             </div>
           </div>
 
-          <div className="glass-card" style={{ padding: '24px' }}>
-            <div
-              className="text-gradient"
-              style={{ fontSize: '2.5rem', fontWeight: 800, lineHeight: 1, marginBottom: '8px' }}
-            >
+          <div className="card-n8n-base" style={{ padding: '28px 24px' }}>
+            <div className="text-gradient" style={{ fontSize: '2.5rem', fontWeight: 800, lineHeight: 1, marginBottom: '10px' }}>
               Imagine Cup
             </div>
-            <div style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-white)', marginBottom: '4px' }}>
+            <div style={{ fontSize: '1rem', fontWeight: 700, color: '#fff', marginBottom: '6px' }}>
               SEA Champion & World Finalist
             </div>
-            <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.4 }}>
+            <div style={{ fontSize: '0.86rem', color: 'var(--color-heading-secondary)', lineHeight: 1.5 }}>
               Microsoft Imagine Cup recognition with Habarala — bringing design & technology to solve real problems.
             </div>
           </div>
 
-          <div className="glass-card" style={{ padding: '24px' }}>
-            <div
-              className="text-gradient"
-              style={{ fontSize: '2.5rem', fontWeight: 800, lineHeight: 1, marginBottom: '8px' }}
-            >
+          <div className="card-n8n-base" style={{ padding: '28px 24px' }}>
+            <div className="text-gradient" style={{ fontSize: '2.5rem', fontWeight: 800, lineHeight: 1, marginBottom: '10px' }}>
               Since 2019
             </div>
-            <div style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-white)', marginBottom: '4px' }}>
-              Curiosity & Digital Craft
+            <div style={{ fontSize: '1rem', fontWeight: 700, color: '#fff', marginBottom: '6px' }}>
+              Continuous Craft & Growth
             </div>
-            <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.4 }}>
+            <div style={{ fontSize: '0.86rem', color: 'var(--color-heading-secondary)', lineHeight: 1.5 }}>
               Evolving from university hackathons and creative communities into a full-service platform.
             </div>
           </div>
 
-          <div className="glass-card" style={{ padding: '24px' }}>
-            <div
-              className="text-gradient"
-              style={{ fontSize: '2.5rem', fontWeight: 800, lineHeight: 1, marginBottom: '8px' }}
-            >
+          <div className="card-n8n-base" style={{ padding: '28px 24px' }}>
+            <div className="text-gradient" style={{ fontSize: '2.5rem', fontWeight: 800, lineHeight: 1, marginBottom: '10px' }}>
               Global
             </div>
-            <div style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-white)', marginBottom: '4px' }}>
+            <div style={{ fontSize: '1rem', fontWeight: 700, color: '#fff', marginBottom: '6px' }}>
               Sri Lanka & Norway
             </div>
-            <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.4 }}>
-              Cross-border collaboration opening doors to international digital execution and standards.
+            <div style={{ fontSize: '0.86rem', color: 'var(--color-heading-secondary)', lineHeight: 1.5 }}>
+              Cross-border partnership under Babette opening the door to international client work.
             </div>
           </div>
         </div>

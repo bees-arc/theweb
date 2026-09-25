@@ -1,15 +1,16 @@
 'use client';
 
-import { Sparkles, ArrowRight, Quote, Award, Globe, Code2 } from 'lucide-react';
+import Link from 'next/link';
+import { Sparkles, ArrowRight, Quote } from 'lucide-react';
 
-export default function Founder({ onOpenFounderModal, onOpenContact }) {
+export default function Founder({ onOpenFounderModal }) {
   return (
     <section id="founder" className="section" style={{ position: 'relative' }}>
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <div className="section-tag">
-            <Sparkles size={14} />
+          <div className="n8n-badge">
+            <Sparkles size={13} />
             <span>Leadership & Vision</span>
           </div>
           <h2 className="section-title">
@@ -20,16 +21,13 @@ export default function Founder({ onOpenFounderModal, onOpenContact }) {
           </p>
         </div>
 
-        {/* Founder Card */}
+        {/* Founder Card with n8n Spark Card styling */}
         <div
-          className="glass-card"
+          className="card-n8n-spark"
           style={{
-            maxWidth: '980px',
+            maxWidth: '1000px',
             margin: '0 auto',
             padding: '48px 40px',
-            background: 'linear-gradient(135deg, rgba(16, 27, 50, 0.85) 0%, rgba(8, 14, 28, 0.95) 100%)',
-            border: '1px solid rgba(0, 210, 255, 0.3)',
-            borderRadius: 'var(--radius-xl)',
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
             gap: '36px',
@@ -53,9 +51,9 @@ export default function Founder({ onOpenFounderModal, onOpenContact }) {
                 width: '140px',
                 height: '140px',
                 borderRadius: '50%',
-                background: 'linear-gradient(135deg, rgba(0, 245, 212, 0.2) 0%, rgba(0, 132, 255, 0.3) 100%)',
-                border: '3px solid var(--cyan-bright)',
-                boxShadow: '0 0 35px rgba(0, 210, 255, 0.35)',
+                background: 'linear-gradient(135deg, rgba(0, 245, 212, 0.25) 0%, rgba(0, 132, 255, 0.35) 100%)',
+                border: '3px solid var(--brand-cyan-neon)',
+                boxShadow: '0 0 35px rgba(0, 210, 255, 0.4)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -65,7 +63,7 @@ export default function Founder({ onOpenFounderModal, onOpenContact }) {
             >
               <div
                 style={{
-                  fontSize: '2.5rem',
+                  fontSize: '2.6rem',
                   fontWeight: 800,
                   color: '#FFFFFF',
                   letterSpacing: '-0.02em',
@@ -79,7 +77,7 @@ export default function Founder({ onOpenFounderModal, onOpenContact }) {
               style={{
                 fontSize: '1.45rem',
                 fontWeight: 800,
-                color: 'var(--text-white)',
+                color: '#FFFFFF',
                 marginBottom: '4px',
               }}
             >
@@ -88,8 +86,8 @@ export default function Founder({ onOpenFounderModal, onOpenContact }) {
             <div
               style={{
                 fontSize: '0.85rem',
-                color: 'var(--cyan-bright)',
-                fontWeight: 600,
+                color: 'var(--brand-cyan-neon)',
+                fontWeight: 700,
                 marginBottom: '16px',
               }}
             >
@@ -107,11 +105,11 @@ export default function Founder({ onOpenFounderModal, onOpenContact }) {
               <div
                 style={{
                   fontSize: '0.78rem',
-                  color: 'var(--text-secondary)',
-                  background: 'rgba(255, 255, 255, 0.04)',
+                  color: '#FFFFFF',
+                  background: 'rgba(255, 255, 255, 0.05)',
                   padding: '6px 12px',
-                  borderRadius: 'var(--radius-sm)',
-                  border: '1px solid rgba(255, 255, 255, 0.06)',
+                  borderRadius: 'var(--radius-full)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
                 }}
               >
                 🏆 Imagine Cup SEA Champion
@@ -119,11 +117,11 @@ export default function Founder({ onOpenFounderModal, onOpenContact }) {
               <div
                 style={{
                   fontSize: '0.78rem',
-                  color: 'var(--text-secondary)',
-                  background: 'rgba(255, 255, 255, 0.04)',
+                  color: '#FFFFFF',
+                  background: 'rgba(255, 255, 255, 0.05)',
                   padding: '6px 12px',
-                  borderRadius: 'var(--radius-sm)',
-                  border: '1px solid rgba(255, 255, 255, 0.06)',
+                  borderRadius: 'var(--radius-full)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
                 }}
               >
                 🇳🇴 90+ Norwegian Deliveries
@@ -143,7 +141,7 @@ export default function Founder({ onOpenFounderModal, onOpenContact }) {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px',
-                color: 'var(--cyan-bright)',
+                color: 'var(--brand-cyan-neon)',
                 marginBottom: '16px',
               }}
             >
@@ -157,7 +155,7 @@ export default function Founder({ onOpenFounderModal, onOpenContact }) {
               style={{
                 fontSize: '1.25rem',
                 fontWeight: 700,
-                color: 'var(--text-white)',
+                color: '#FFFFFF',
                 lineHeight: 1.45,
                 marginBottom: '18px',
               }}
@@ -167,8 +165,8 @@ export default function Founder({ onOpenFounderModal, onOpenContact }) {
 
             <p
               style={{
-                fontSize: '0.98rem',
-                color: 'var(--text-secondary)',
+                fontSize: '0.96rem',
+                color: 'var(--color-heading-secondary)',
                 lineHeight: 1.7,
                 marginBottom: '20px',
               }}
@@ -180,8 +178,8 @@ export default function Founder({ onOpenFounderModal, onOpenContact }) {
 
             <p
               style={{
-                fontSize: '0.98rem',
-                color: 'var(--text-secondary)',
+                fontSize: '0.96rem',
+                color: 'var(--color-heading-secondary)',
                 lineHeight: 1.7,
                 marginBottom: '32px',
               }}
@@ -203,25 +201,25 @@ export default function Founder({ onOpenFounderModal, onOpenContact }) {
                 className="btn btn-primary btn-anim-arrow"
                 style={{
                   padding: '12px 24px',
-                  fontSize: '0.92rem',
-                  borderRadius: 'var(--radius-md)',
+                  borderRadius: 'var(--radius-full)',
                 }}
               >
-                <span>Read Full Founder Story</span>
-                <ArrowRight size={15} />
+                <span className="btn-label">Read Full Founder Story</span>
+                <span className="btn-icon">
+                  <ArrowRight size={15} />
+                </span>
               </button>
 
-              <button
-                onClick={onOpenContact}
+              <Link
+                href="/contact"
                 className="btn btn-secondary"
                 style={{
                   padding: '12px 22px',
-                  fontSize: '0.92rem',
-                  borderRadius: 'var(--radius-md)',
+                  borderRadius: 'var(--radius-full)',
                 }}
               >
                 <span>Let's talk</span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
