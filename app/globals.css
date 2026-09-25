@@ -44,6 +44,15 @@
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 html {
   scroll-behavior: smooth;
   color-scheme: dark;
@@ -429,4 +438,148 @@ body::before {
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
   transform: rotate(90deg);
+}
+
+/* ===================================================
+   MOBILE RESPONSIVE — iOS-LIKE SLEEK EXPERIENCE
+   Breakpoints: 960px, 768px, 640px, 480px
+   =================================================== */
+
+/* Float animation used in hero */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-14px) rotate(0.5deg); }
+  66%       { transform: translateY(-7px) rotate(-0.5deg); }
+}
+
+/* ---- HERO ---- */
+@media (max-width: 960px) {
+  .hero-left-col  { grid-column: span 12 !important; text-align: left; }
+  .hero-right-col { grid-column: span 12 !important; max-width: 420px; margin: 0 auto; }
+}
+
+@media (max-width: 640px) {
+  .hero-left-col { padding: 0 !important; }
+  .hero-right-col { max-width: 300px; }
+}
+
+/* ---- FEATURED WORK / CASE STUDIES ---- */
+@media (max-width: 960px) {
+  .featured-work-grid { grid-template-columns: 1fr !important; }
+  .work-card-main     { grid-column: span 1 !important; }
+}
+
+/* ---- WHAT WE DO ---- */
+@media (max-width: 960px) {
+  .what-we-do-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .service-card    { grid-column: span 1 !important; }
+}
+
+/* ---- HOW WE WORK ---- */
+@media (max-width: 960px) {
+  .how-we-work-grid { grid-template-columns: 1fr !important; }
+  .step-card        { grid-column: span 1 !important; }
+}
+
+/* ---- ABOUT / MILESTONES ---- */
+@media (max-width: 960px) {
+  .about-grid    { grid-template-columns: 1fr !important; }
+  .about-col     { grid-column: span 1 !important; }
+  .milestone-row { flex-direction: column !important; gap: 8px !important; }
+}
+
+/* ---- FOUNDER ---- */
+@media (max-width: 960px) {
+  .founder-grid { grid-template-columns: 1fr !important; }
+  .founder-col  { grid-column: span 1 !important; }
+}
+
+/* ---- TECHNOLOGY ---- */
+@media (max-width: 960px) {
+  .tech-grid { grid-template-columns: repeat(3, 1fr) !important; }
+}
+@media (max-width: 480px) {
+  .tech-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* ---- PARTNERS ---- */
+@media (max-width: 960px) {
+  .partners-grid { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 640px) {
+  .partners-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ---- TESTIMONIALS ---- */
+@media (max-width: 960px) {
+  .testimonials-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ---- INSIGHTS ---- */
+@media (max-width: 960px) {
+  .insights-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ---- CTA BANNER ---- */
+@media (max-width: 960px) {
+  .cta-left-col  { grid-column: span 12 !important; }
+  .cta-right-col { grid-column: span 12 !important; }
+}
+
+/* ---- FOOTER ---- */
+@media (max-width: 1024px) {
+  .footer-card         { padding: 36px 24px 24px !important; border-radius: 20px 20px 0 0 !important; }
+  .footer-brand-col    { grid-column: span 12 !important; margin-bottom: 8px; }
+  .footer-main-grid    { grid-template-columns: 1fr !important; }
+  .footer-links-cols   { grid-template-columns: repeat(3, 1fr) !important; }
+}
+@media (max-width: 640px) {
+  .footer-links-cols   { grid-template-columns: 1fr 1fr !important; }
+  .footer-bottom       { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
+}
+@media (max-width: 480px) {
+  .footer-links-cols   { grid-template-columns: 1fr !important; }
+}
+
+/* ---- SECTION HEADER MOBILE ---- */
+@media (max-width: 640px) {
+  .section-header { margin-bottom: 36px !important; }
+  .section-title  { font-size: 2rem !important; }
+}
+
+/* ---- MODAL MOBILE ---- */
+@media (max-width: 640px) {
+  .modal-content {
+    padding: 28px 20px !important;
+    max-height: 95vh !important;
+    border-radius: 20px !important;
+  }
+  .modal-backdrop {
+    padding: 10px !important;
+    align-items: flex-end !important;
+  }
+}
+
+/* ---- TOUCH TARGET IMPROVEMENTS (iOS feel) ---- */
+@media (max-width: 960px) {
+  .btn {
+    min-height: 44px;
+    padding: 12px 20px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* ---- CARD HOVER: DISABLE ON TOUCH (no stuck states) ---- */
+@media (hover: none) {
+  .card-n8n-base:hover,
+  .card-n8n-highlight:hover {
+    transform: none !important;
+  }
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: none !important;
+  }
 }
