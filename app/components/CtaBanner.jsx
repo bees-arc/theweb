@@ -46,6 +46,7 @@ export default function CtaBanner() {
           }}
         >
           <div
+            className="cta-main-grid"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(12, 1fr)',

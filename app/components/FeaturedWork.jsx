@@ -99,7 +99,7 @@ export default function FeaturedWork({ onSelectCaseStudy }) {
           {caseStudies.map((study) => (
             <div
               key={study.id}
-              className="card-n8n-base"
+              className="card-n8n-base case-study-grid"
               style={{
                 padding: '40px 36px',
                 display: 'grid',

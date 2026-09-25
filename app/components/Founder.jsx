@@ -23,7 +23,7 @@ export default function Founder({ onOpenFounderModal }) {
 
         {/* Founder Card with n8n Spark Card styling */}
         <div
-          className="card-n8n-spark"
+          className="card-n8n-spark founder-grid"
           style={{
             maxWidth: '1000px',
             margin: '0 auto',

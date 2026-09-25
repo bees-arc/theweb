@@ -216,50 +216,56 @@ export default function Footer({ onOpenContact }) {
               </div>
             </div>
 
-            {/* Link Col 1 */}
-            <div style={{ gridColumn: 'span 3' }} className="footer-links-col">
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '13px' }}>
-                <li>
-                  <button onClick={onOpenContact} className="fcol-link" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', textAlign: 'left', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-                    <span>Careers</span>
-                    <span className="ftag">Hiring</span>
-                  </button>
-                </li>
-                <li><button onClick={onOpenContact} className="fcol-link" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', textAlign: 'left' }}>Contact</button></li>
-                <li><Link href="/work" className="fcol-link">Case Studies</Link></li>
-                <li><Link href="/what-we-do" className="fcol-link">Digital Products</Link></li>
-                <li><Link href="/privacy" className="fcol-link">Legal</Link></li>
-                <li>
-                  <Link href="/insights" className="fcol-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-                    <span>In The Loop</span>
-                    <span className="ftag" style={{ color: '#00F5D4', borderColor: 'rgba(0,245,212,0.35)', background: 'rgba(0,245,212,0.08)' }}>2026</span>
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            {/* Link Columns Wrapper — 3 cols on desktop, responsive on mobile */}
+            <div
+              className="footer-links-cols"
+              style={{ gridColumn: 'span 9', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }}
+            >
+              {/* Link Col 1 */}
+              <div>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '13px' }}>
+                  <li>
+                    <button onClick={onOpenContact} className="fcol-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                      <span>Careers</span>
+                      <span className="ftag">Hiring</span>
+                    </button>
+                  </li>
+                  <li><button onClick={onOpenContact} className="fcol-link">Contact</button></li>
+                  <li><Link href="/work" className="fcol-link">Case Studies</Link></li>
+                  <li><Link href="/what-we-do" className="fcol-link">Digital Products</Link></li>
+                  <li><Link href="/privacy" className="fcol-link">Legal</Link></li>
+                  <li>
+                    <Link href="/insights" className="fcol-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                      <span>In The Loop</span>
+                      <span className="ftag" style={{ color: '#00F5D4', borderColor: 'rgba(0,245,212,0.35)', background: 'rgba(0,245,212,0.08)' }}>2026</span>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
 
-            {/* Link Col 2 */}
-            <div style={{ gridColumn: 'span 3' }} className="footer-links-col">
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '13px' }}>
-                <li><Link href="/insights" className="fcol-link">Product Philosophy</Link></li>
-                <li><Link href="/work" className="fcol-link">Imagine Cup Finalist</Link></li>
-                <li><Link href="/work" className="fcol-link">90+ Norway Deliveries</Link></li>
-                <li><Link href="/what-we-do" className="fcol-link">Next.js & AI Systems</Link></li>
-                <li><Link href="/about" className="fcol-link">Company Story</Link></li>
-                <li><Link href="/how-we-work" className="fcol-link">Methodology 01–05</Link></li>
-              </ul>
-            </div>
+              {/* Link Col 2 */}
+              <div>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '13px' }}>
+                  <li><Link href="/insights" className="fcol-link">Product Philosophy</Link></li>
+                  <li><Link href="/work" className="fcol-link">Imagine Cup Finalist</Link></li>
+                  <li><Link href="/work" className="fcol-link">90+ Norway Deliveries</Link></li>
+                  <li><Link href="/what-we-do" className="fcol-link">Next.js & AI Systems</Link></li>
+                  <li><Link href="/about" className="fcol-link">Company Story</Link></li>
+                  <li><Link href="/how-we-work" className="fcol-link">Methodology 01–05</Link></li>
+                </ul>
+              </div>
 
-            {/* Link Col 3 */}
-            <div style={{ gridColumn: 'span 3' }} className="footer-links-col">
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '13px' }}>
-                <li><Link href="/about#partners" className="fcol-link">Partners</Link></li>
-                <li><Link href="/how-we-work#approach" className="fcol-link">Theweb Approach</Link></li>
-                <li><button onClick={onOpenContact} className="fcol-link" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', textAlign: 'left' }}>Hire an expert</button></li>
-                <li><Link href="/about" className="fcol-link">Brand guidelines</Link></li>
-                <li><Link href="/insights" className="fcol-link">Insights & Notes</Link></li>
-                <li><Link href="/what-we-do" className="fcol-link">Websites</Link></li>
-              </ul>
+              {/* Link Col 3 */}
+              <div>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '13px' }}>
+                  <li><Link href="/about#partners" className="fcol-link">Partners</Link></li>
+                  <li><Link href="/how-we-work#approach" className="fcol-link">Theweb Approach</Link></li>
+                  <li><button onClick={onOpenContact} className="fcol-link">Hire an expert</button></li>
+                  <li><Link href="/about" className="fcol-link">Brand guidelines</Link></li>
+                  <li><Link href="/insights" className="fcol-link">Insights & Notes</Link></li>
+                  <li><Link href="/what-we-do" className="fcol-link">Websites</Link></li>
+                </ul>
+              </div>
             </div>
           </div>
 
@@ -300,63 +306,6 @@ export default function Footer({ onOpenContact }) {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes starPulse {
-          0%, 100% { opacity: 0.2; transform: scale(0.8); }
-          50%       { opacity: 1;   transform: scale(1.5); }
-        }
-
-        .soc-icon {
-          color: #64748b;
-          display: inline-flex;
-          align-items: center;
-          transition: color 0.2s ease, transform 0.2s ease;
-        }
-        .soc-icon:hover {
-          color: #00F5D4;
-          transform: translateY(-2px);
-        }
-
-        .fcol-link {
-          font-size: 0.9rem;
-          color: #cbd5e1;
-          text-decoration: none;
-          transition: color 0.15s ease;
-        }
-        .fcol-link:hover { color: #ffffff; }
-
-        .ftag {
-          background: rgba(255,255,255,0.07);
-          color: #e2e8f0;
-          font-size: 0.72rem;
-          font-weight: 600;
-          padding: 2px 9px;
-          border-radius: 10px;
-          border: 1px solid rgba(255,255,255,0.1);
-          display: inline-block;
-        }
-
-        .fbot-link {
-          color: #4b5d73;
-          text-decoration: none;
-          transition: color 0.15s ease;
-        }
-        .fbot-link:hover { color: #94a3b8; }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-          .footer-card { padding: 40px 28px 28px !important; }
-          .footer-brand-col { grid-column: span 12 !important; margin-bottom: 8px; }
-          .footer-links-col { grid-column: span 4 !important; }
-        }
-        @media (max-width: 768px) {
-          .footer-links-col { grid-column: span 6 !important; }
-          .footer-bottom { flex-direction: column; align-items: flex-start !important; }
-        }
-        @media (max-width: 480px) {
-          .footer-links-col { grid-column: span 12 !important; }
-        }
-      `}</style>
     </footer>
   );
 }

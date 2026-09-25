@@ -589,3 +589,126 @@ body::before {
     transform: none !important;
   }
 }
+
+/* ===================================================
+   HEADER NAV — VISIBILITY BREAKPOINTS
+   =================================================== */
+.desktop-nav   { display: none; }
+.award-pill    { display: none; }
+.desktop-cta   { display: none; }
+.mobile-toggle { display: none; }
+
+@media (min-width: 960px) {
+  .desktop-nav { display: flex !important; }
+  .award-pill  { display: flex !important; }
+  .desktop-cta { display: inline-flex !important; }
+  .mobile-toggle { display: none !important; }
+  .mobile-fullscreen-overlay { display: none !important; pointer-events: none !important; }
+}
+
+@media (max-width: 959px) {
+  .mobile-toggle { display: flex !important; }
+}
+
+/* ===================================================
+   FOOTER COMPONENT CLASSES
+   =================================================== */
+@keyframes starPulse {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50%       { opacity: 1;   transform: scale(1.5); }
+}
+
+.soc-icon {
+  color: #64748b;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.soc-icon:hover {
+  color: #00F5D4;
+  transform: translateY(-2px);
+}
+
+.fcol-link {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  display: inline;
+}
+.fcol-link:hover { color: #ffffff; }
+
+.ftag {
+  background: rgba(255,255,255,0.07);
+  color: #e2e8f0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: inline-block;
+}
+
+.fbot-link {
+  color: #4b5d73;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.fbot-link:hover { color: #94a3b8; }
+
+/* Footer responsive (from removed style jsx) */
+@media (max-width: 1024px) {
+  .footer-card      { padding: 36px 24px 24px !important; }
+  .footer-brand-col { grid-column: span 12 !important; margin-bottom: 8px; }
+  .footer-main-grid { grid-template-columns: 1fr !important; }
+  .footer-links-cols { grid-template-columns: repeat(3, 1fr) !important; }
+}
+@media (max-width: 768px) {
+  .footer-links-cols { grid-template-columns: 1fr 1fr !important; }
+  .footer-bottom     { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
+}
+@media (max-width: 480px) {
+  .footer-links-cols { grid-template-columns: 1fr !important; }
+}
+
+/* HowWeWork responsive — collapse 12-col to 1 col */
+@media (max-width: 900px) {
+  .how-steps-grid { grid-template-columns: 1fr !important; }
+  .how-steps-nav,
+  .how-steps-detail { grid-column: span 1 !important; }
+}
+
+/* FeaturedWork responsive */
+@media (max-width: 900px) {
+  .case-study-grid { grid-template-columns: 1fr !important; padding: 28px 20px !important; }
+  .case-content-col,
+  .case-results-col { grid-column: span 1 !important; }
+}
+
+/* Founder responsive */
+@media (max-width: 860px) {
+  .founder-grid { grid-template-columns: 1fr !important; padding: 32px 24px !important; text-align: center; }
+  .founder-avatar-col,
+  .founder-content-col { grid-column: span 1 !important; }
+}
+
+/* Hero responsive */
+@media (max-width: 960px) {
+  .hero-main-grid { grid-template-columns: 1fr !important; gap: 48px !important; margin-bottom: 48px !important; }
+  .hero-left-col,
+  .hero-right-col { grid-column: span 1 !important; }
+  .viewer-tabs-col,
+  .viewer-canvas-col { grid-column: span 1 !important; }
+}
+
+/* CTA Banner responsive */
+@media (max-width: 900px) {
+  .cta-main-grid { grid-template-columns: 1fr !important; text-align: center; }
+  .cta-left-col,
+  .cta-right-col { grid-column: span 1 !important; }
+}

@@ -93,6 +93,7 @@ export default function Hero() {
             PART 1: TWO-COLUMN HERO MATCHING N8N.IO EXACTLY
            ======================================================== */}
         <div
+          className="hero-main-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',

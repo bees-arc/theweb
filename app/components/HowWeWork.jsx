@@ -69,6 +69,7 @@ export default function HowWeWork() {
 
         {/* 5-Step Process Interactive Matrix */}
         <div
+          className="how-steps-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
