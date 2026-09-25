@@ -70,7 +70,7 @@ export default function Hero() {
   const currentWorkflow = workflowTabs[activeTab];
 
   return (
-    <section style={{ position: 'relative', paddingTop: 'clamp(100px, 14vw, 150px)', paddingBottom: '80px', overflow: 'hidden' }}>
+    <section className="hero-section" style={{ position: 'relative', paddingTop: 'clamp(100px, 14vw, 150px)', paddingBottom: '80px', overflow: 'hidden' }}>
       <div className="n8n-grid-bg" />
 
       {/* n8n Radial Glow Backlight */}
