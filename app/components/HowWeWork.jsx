@@ -154,16 +154,7 @@ export default function HowWeWork() {
             }}
             className="how-steps-detail"
           >
-            <div
-              className="card-n8n-spark"
-              style={{
-                height: '100%',
-                padding: '40px 36px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-              }}
-            >
+            <div className="card-n8n-spark how-step-detail-card">
               <div>
                 <div
                   style={{
@@ -171,6 +162,8 @@ export default function HowWeWork() {
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     marginBottom: '20px',
+                    flexWrap: 'wrap',
+                    gap: '8px',
                   }}
                 >
                   <span
@@ -200,11 +193,12 @@ export default function HowWeWork() {
 
                 <h3
                   style={{
-                    fontSize: '2.2rem',
+                    fontSize: 'clamp(1.4rem, 4.5vw, 2.2rem)',
                     fontWeight: 800,
                     color: '#FFFFFF',
                     marginBottom: '16px',
                     letterSpacing: '-0.02em',
+                    lineHeight: 1.25,
                   }}
                 >
                   {steps[activeStep].num} — {steps[activeStep].title}

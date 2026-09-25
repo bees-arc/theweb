@@ -100,13 +100,6 @@ export default function FeaturedWork({ onSelectCaseStudy }) {
             <div
               key={study.id}
               className="card-n8n-base case-study-grid"
-              style={{
-                padding: '40px 36px',
-                display: 'grid',
-                gridTemplateColumns: 'repeat(12, 1fr)',
-                gap: '32px',
-                alignItems: 'center',
-              }}
             >
               {/* Left Column: Case Overview */}
               <div style={{ gridColumn: 'span 7' }} className="case-content-col">

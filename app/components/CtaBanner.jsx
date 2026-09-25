@@ -45,15 +45,7 @@ export default function CtaBanner() {
             borderRadius: 'var(--radius-2xl)',
           }}
         >
-          <div
-            className="cta-main-grid"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(12, 1fr)',
-              gap: '40px',
-              alignItems: 'center',
-            }}
-          >
+          <div className="cta-main-grid">
             {/* Left Column: Heading & Ethos */}
             <div style={{ gridColumn: 'span 6' }} className="cta-left-col">
               <div className="n8n-badge" style={{ marginBottom: '20px' }}>
