@@ -241,18 +241,6 @@ export default function Header() {
         </div>
       </div>
 
-      <style jsx>{`
-        @media (min-width: 960px) {
-          .desktop-nav { display: flex !important; }
-          .award-pill  { display: flex !important; }
-          .desktop-cta { display: inline-flex !important; }
-          .mobile-toggle { display: none !important; }
-          .mobile-fullscreen-overlay { display: none !important; }
-        }
-        @media (max-width: 959px) {
-          .mobile-toggle { display: flex !important; }
-        }
-      `}</style>
     </>
   );
 }

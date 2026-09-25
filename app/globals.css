@@ -454,13 +454,19 @@ body::before {
 
 /* ---- HERO ---- */
 @media (max-width: 960px) {
-  .hero-left-col  { grid-column: span 12 !important; text-align: left; }
-  .hero-right-col { grid-column: span 12 !important; max-width: 420px; margin: 0 auto; }
+  .hero-section {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 48px !important;
+  }
+  .hero-left-col  { grid-column: span 12 !important; text-align: left; order: 1; }
+  .hero-right-col { grid-column: span 12 !important; max-width: 360px; margin: 0 auto; order: 2; }
 }
 
 @media (max-width: 640px) {
-  .hero-left-col { padding: 0 !important; }
-  .hero-right-col { max-width: 300px; }
+  .hero-right-col { max-width: 260px; }
 }
 
 /* ---- FEATURED WORK / CASE STUDIES ---- */

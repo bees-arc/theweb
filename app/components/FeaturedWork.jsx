@@ -274,16 +274,6 @@ export default function FeaturedWork({ onSelectCaseStudy }) {
         </div>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 900px) {
-          .case-content-col {
-            grid-column: span 12 !important;
-          }
-          .case-results-col {
-            grid-column: span 12 !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

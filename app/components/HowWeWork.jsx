@@ -320,16 +320,6 @@ export default function HowWeWork() {
         </div>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 900px) {
-          .how-steps-nav {
-            grid-column: span 12 !important;
-          }
-          .how-steps-detail {
-            grid-column: span 12 !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

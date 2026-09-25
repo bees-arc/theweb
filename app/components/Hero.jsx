@@ -481,32 +481,6 @@ export default function Hero() {
         </div>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 960px) {
-          .hero-left-col {
-            grid-column: span 12 !important;
-            order: 1;
-          }
-          .hero-right-col {
-            grid-column: span 12 !important;
-            order: 2;
-            max-width: 360px;
-            margin: 0 auto;
-          }
-          .viewer-tabs-col {
-            grid-column: span 12 !important;
-          }
-          .viewer-canvas-col {
-            grid-column: span 12 !important;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .hero-right-col {
-            max-width: 280px;
-          }
-        }
-      `}</style>
     </section>
   );
 }
