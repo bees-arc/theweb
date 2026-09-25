@@ -29,48 +29,8 @@ export default function Header() {
 
   return (
     <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100 }}>
-      {/* 1. Top Announcement Bar matching n8n.io */}
-      <div
-        style={{
-          background: 'linear-gradient(90deg, rgba(6, 10, 20, 0.95) 0%, rgba(14, 25, 50, 0.95) 50%, rgba(6, 10, 20, 0.95) 100%)',
-          borderBottom: '1px solid rgba(0, 210, 255, 0.15)',
-          padding: '8px 16px',
-          textAlign: 'center',
-          fontSize: '0.82rem',
-          color: 'var(--color-heading-secondary)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '12px',
-          flexWrap: 'wrap',
-        }}
-      >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Trophy size={14} color="var(--brand-cyan-neon)" />
-          <span>Microsoft Imagine Cup Southeast Asia Champion & World Finalist</span>
-        </div>
-        <Link
-          href="/work"
-          style={{
-            background: 'linear-gradient(135deg, rgba(0, 245, 212, 0.2) 0%, rgba(0, 132, 255, 0.25) 100%)',
-            border: '1px solid rgba(0, 210, 255, 0.35)',
-            color: '#FFFFFF',
-            padding: '2px 10px',
-            borderRadius: 'var(--radius-full)',
-            fontWeight: 600,
-            fontSize: '0.78rem',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '4px',
-          }}
-        >
-          <span>Read case study</span>
-          <ArrowRight size={12} />
-        </Link>
-      </div>
-
-      {/* 2. Floating Navbar matching n8n.io rounded rectangular container */}
-      <div className="container" style={{ padding: '12px 16px' }}>
+      {/* Floating Navbar matching n8n.io rounded rectangular container */}
+      <div className="container" style={{ padding: '16px 16px' }}>
         <header
           style={{
             maxWidth: '1220px',
