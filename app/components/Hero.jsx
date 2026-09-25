@@ -200,19 +200,7 @@ export default function Hero() {
         {/* ========================================================
             PART 2: CLIENT / SOCIAL PROOF RIBBON MATCHING N8N.IO
            ======================================================== */}
-        <div
-          style={{
-            borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-            padding: '24px 0',
-            marginBottom: '72px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '24px',
-          }}
-        >
+        <div className="hero-proof-ribbon">
           <div style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', fontWeight: 600, maxWidth: '220px' }}>
             Purposeful technology & digital products trusted across:
           </div>

@@ -461,12 +461,26 @@ body::before {
     justify-content: center;
     padding-bottom: 48px !important;
   }
-  .hero-left-col  { grid-column: span 12 !important; text-align: left; order: 1; }
-  .hero-right-col { grid-column: span 12 !important; max-width: 360px; margin: 0 auto; order: 2; }
+  .hero-main-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+    margin-bottom: 48px !important;
+  }
+  .hero-left-col  { grid-column: span 1 !important; text-align: left; order: 1; }
+  .hero-right-col {
+    grid-column: span 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    max-width: 320px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    order: 2;
+  }
 }
 
 @media (max-width: 640px) {
-  .hero-right-col { max-width: 260px; }
+  .hero-right-col { max-width: 260px !important; }
 }
 
 /* ---- FEATURED WORK / CASE STUDIES ---- */
@@ -704,6 +718,24 @@ body::before {
   gap: 40px;
   align-items: center;
   margin-bottom: 80px;
+}
+
+.hero-proof-ribbon {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px 0;
+  margin-bottom: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+@media (max-width: 960px) {
+  .hero-proof-ribbon {
+    display: none !important;
+  }
 }
 
 .hero-cta-group {
